@@ -1,14 +1,15 @@
 <?php 
-include 'includes/session.inc.php';
-//include 'logics/authorize.php';
 
-if(isset($_SESSION['login']))
-{
-     include('includes/session-logout.php');
-}else
-{ include('includes/session-login.php');
+require __DIR__."/includes/bundle.php";
+
+if(isset($_SESSION['login'])) {
+    include('includes/session-logout.php');
+} else { 
+    include('includes/session-login.php');
 }
+
 ?>
+
 <html>
 <head>
     <title>Super Arrows</title>
@@ -19,20 +20,21 @@ if(isset($_SESSION['login']))
     <form method="POST" action="results.php">
         <?php 
 
-        
-            //change to reading file from JSON
-            $allGames = array(array("James Smith", "Luke Green"), array("Phil Taylor", "Michael Van Gerwin"));
+            $mf = new MatchFactory($db);
+            $q = $mf->getRoundMatches();
 
-            foreach($allGames as $game)
-            {
-                echo "<p>".$game[0]. " vs " .$game[1]. "</p>";
-                echo "<input type='number' name='player1[]'/>";
-                echo "<input type='number' name='player2[]'/>";
+            foreach($q as $row) {
+                echo "<p>".$row["player1first"]. " ".$row["player1last"]." vs " .$row["player2first"]. " ".$row["player2last"]." (6)</p>";
+                echo "<input type='number' name='player1[]' min='0'/>";
+                echo "<input type='number' name='player2[]' min='0'/>";
             }
+
+            echo "<p>Golden 180's</p>";
+            echo "<input type='number' name='golden180' min='0'/>";
 
             echo "<br/><br/>";
             echo "<input type='submit'/>";
-            
+
         ?>
     </form>
 </body>

@@ -9,7 +9,7 @@
     <title>Super Arrows</title>
 </head>
 <body>
-    <form method="POST" action="results.php">
+    <form method="POST" action="submittedadmin.php">
         <?php 
 
         
@@ -23,16 +23,16 @@
             {
                 echo "<p>".$game. "</p>";
                 echo "<p>Player 1 vs Player 2</p>";
-                echo "<input type='number' name='player1[]'/>";
-                echo "<input type='number' name='player2[]'/>";
+                echo "<input type='text' name='player1[]'/>";
+                echo "<input type='text' name='player2[]'/>";
                 $i++;
             }
         }
-
+        
             echo "<br/><br/>";
             echo "<input type='submit'/>";
             
-
+            
             
         ?>
     </form>

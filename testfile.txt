@@ -1,0 +1,32 @@
+array(2) {
+  ["player1"]=>
+  array(6) {
+    [0]=>
+    string(7) "Nathasn"
+    [1]=>
+    string(5) "fdsjn"
+    [2]=>
+    string(3) "khj"
+    [3]=>
+    string(5) "bhbkj"
+    [4]=>
+    string(3) "jkn"
+    [5]=>
+    string(4) "jkbk"
+  }
+  ["player2"]=>
+  array(6) {
+    [0]=>
+    string(7) "afssdfn"
+    [1]=>
+    string(3) "kjb"
+    [2]=>
+    string(3) "jhb"
+    [3]=>
+    string(3) "jkb"
+    [4]=>
+    string(3) "jkb"
+    [5]=>
+    string(6) "jbhkhb"
+  }
+}

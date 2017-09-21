@@ -7,8 +7,8 @@ class Match {
     public $player1;
     public $player2;
     public $result;
-    public $player1Score;
-    public $player2Score;
+    public $player1Score; //result
+    public $player2Score; //result
     public $match180s;
     public $roundId;
 

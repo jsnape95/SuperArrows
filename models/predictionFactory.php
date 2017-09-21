@@ -49,7 +49,7 @@ class PredictionFactory {
         ]);
     }
 
-    public function refactorPreds(array $preds1, array $preds2) {
+    public function fromPostArrays(array $preds1, array $preds2) {
 
         $predictionObjs = [];
         

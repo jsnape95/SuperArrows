@@ -13,7 +13,7 @@ require __DIR__."/includes/bundle.php";
             <?php 
 
                 $pf = new PredictionFactory($db);
-                $predictionObjs = $pf->refactorPreds(
+                $predictionObjs = $pf->fromPostArrays(
                     $_POST['player1'],
                     $_POST['player2']
                 );

@@ -8,8 +8,6 @@ if(isset($_SESSION['login'])) {
     include('includes/session-login.php');
 }
 
-
-/////
 ?>
 
 <html>
@@ -30,14 +28,14 @@ if(isset($_SESSION['login'])) {
                 echo "<input type='number' name='player1[]' min='0'/>";
                 echo "<input type='number' name='player2[]' min='0'/>";
             }
-
-            echo "<p>Golden 180's</p>";
-            echo "<input type='number' name='golden180' min='0'/>";
-
-            echo "<br/><br/>";
-            echo "<input type='submit'/>";
-
         ?>
+
+        <p>Golden 180's</p>
+        <input type='number' name='golden180' min='0'/>
+        <br/><br/>
+        <input type='submit'/>
+
+        
     </form>
 </body>
 </html>

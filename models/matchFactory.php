@@ -10,7 +10,6 @@ class MatchFactory {
 
     public function getRoundMatches() {
         $q = $this->db->query("
-
             select players.firstname as player1first, 
                     players.lastname as player1last, 
                     p2.firstname as player2first, 

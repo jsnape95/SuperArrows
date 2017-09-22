@@ -11,17 +11,7 @@ spl_autoload_register(function($className){
     }
 });
 
-function getCurrentRound(){
-    $currentDate = new DateTime(date("Y/m/d H:i:s"));
-    $round->db->query("
-        select id
-        from rounds
-        where 
-            startdate <= $currentDate &&
-            enddate >= $currentDatel
-    ");
-    return $round;
-};
+
 
 $DB = new Connection();
 $db = $DB->getDb();

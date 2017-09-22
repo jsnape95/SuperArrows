@@ -1,5 +1,6 @@
 <?php
 
+
 class resultFactory {
     private $db;
     
@@ -23,6 +24,6 @@ class resultFactory {
 
         $prediction->id = $this->db->lastInsertId();
     }
+
 }
-UPDATE `SuperArrows`.`matches` SET `player1score`='1' WHERE `id`='1';
 ?>

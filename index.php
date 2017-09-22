@@ -28,6 +28,8 @@ if(isset($_SESSION['login'])) {
                 echo "<input type='number' name='player1[]' min='0'/>";
                 echo "<input type='number' name='player2[]' min='0'/>";
             }
+            $rf = new RoundFactory($db);
+            $r = $rf->getCurrentRound();
         ?>
 
         <p>Golden 180's</p>

@@ -13,9 +13,11 @@ class MatchFactory {
             select players.firstname as player1first, 
                     players.lastname as player1last, 
                     p2.firstname as player2first, 
-                    p2.lastname as player2last 
+                    p2.lastname as player2last, 
+                    matches.player1score,
+                    matches.player2score
             from matches
-            join players 
+            join players
             on matches.player1 = players.id
             join players as p2 
             on matches.player2 = p2.id

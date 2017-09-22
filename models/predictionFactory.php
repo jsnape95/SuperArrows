@@ -36,13 +36,13 @@ class PredictionFactory {
     private function update(Prediction $prediction) {
         $stmt = $this->db->prepare("
             update predictions set
-                no180s = :num180s,
+                no180s = :no180s,
                 player1prediction = :player1prediction,
                 player2prediction = :player2prediction
             where id = :id
         ");
 
-        $result = $stmt->exectue([
+        $result = $stmt->execute([
             'num180s' => $prediction->numberOf180s,
             'player1prediction' => $prediction->player1prediction,
             'player2prediction' => $prediction->player2prediction

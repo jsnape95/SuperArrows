@@ -52,6 +52,8 @@ class PredictionFactory {
 
         $predictionObjs = [];
 
+
+
         foreach($preds1 as $val => $player1score) {
 
             $dt = new DateTime(date("Y/m/d H:i:s"));

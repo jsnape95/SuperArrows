@@ -7,7 +7,9 @@ class MatchFactory {
         $this->db = $db;
     }
     public function getRoundMatches() {
-        $result = $this->db->query("
+
+
+        $query = "
             select players.firstname as player1first, 
                     players.lastname as player1last, 
                     p2.firstname as player2first, 
@@ -25,7 +27,12 @@ class MatchFactory {
             on matches.player1 = players.id
             join players as p2
             on matches.player2 = p2.id
-        ;");
+        ;";
+
+    
+        $result = $this->db->query($query);
+
+        
 
         $matches = [];
 

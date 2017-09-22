@@ -39,6 +39,8 @@ class RoundFactory{
             where matches.roundsid = 1
         ");
 
+        $rounds = [];
+        
         foreach($result as $round){
             $r = new Result();
             $r->player1prediction = intval($round['p1Pred']);

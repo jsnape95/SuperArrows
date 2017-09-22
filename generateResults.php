@@ -19,7 +19,11 @@
 
             echo "<br/><br/>";
             echo "<br/><br/>";
-            echo $roundScore;
+            if($roundScore == 30){
+                echo "You have score $roundScore points this round and have one Super Arrows!";
+            } else {  
+                echo "You have score $roundScore points this round!";
+            }
         ?>
 </body>
 </html>

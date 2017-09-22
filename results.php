@@ -13,12 +13,15 @@ require __DIR__."/includes/bundle.php";
             <?php 
 
                 $pf = new PredictionFactory($db);
+
+                $matches = unserialize($_POST['matches']);
                 $predictionObjs = $pf->fromPostArrays(
-                    $_POST['player1'],
-                    $_POST['player2']
+                    $_POST['player1score'],
+                    $_POST['player2score'],
+                    $matches
                 );
 
-                var_dump($predictionObjs);
+                //var_dump($predictionObjs);
 
                 foreach($predictionObjs as $p) {
                     $pf->save($p);
@@ -26,7 +29,7 @@ require __DIR__."/includes/bundle.php";
 
                 echo "<h2>Predictions Submitted, Good Luck!</h2>";
                 echo "<input type='hidden' name='predictions' value='$dataString'/>";
-                echo "<input type='submit' value='View Results'/>";
+                // echo "<input type='submit' value='View Results'/>";
             ?>
         </form>
     </body>

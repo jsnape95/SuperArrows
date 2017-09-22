@@ -10,7 +10,7 @@
 </head>
 <body>
     <a href='/adminmatches.php'>Matches</a>
-    <a href=''>Results</a>
+    <a href='/adminresult.php'>Results</a>
     <a href=''>Players</a>
 </body>
 </html>

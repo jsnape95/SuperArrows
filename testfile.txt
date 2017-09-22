@@ -2,31 +2,31 @@ array(2) {
   ["player1"]=>
   array(6) {
     [0]=>
-    string(7) "Nathasn"
+    string(1) "1"
     [1]=>
-    string(5) "fdsjn"
+    string(1) "3"
     [2]=>
-    string(3) "khj"
+    string(1) "5"
     [3]=>
-    string(5) "bhbkj"
+    string(1) "7"
     [4]=>
-    string(3) "jkn"
+    string(1) "9"
     [5]=>
-    string(4) "jkbk"
+    string(2) "11"
   }
   ["player2"]=>
   array(6) {
     [0]=>
-    string(7) "afssdfn"
+    string(1) "2"
     [1]=>
-    string(3) "kjb"
+    string(1) "4"
     [2]=>
-    string(3) "jhb"
+    string(1) "6"
     [3]=>
-    string(3) "jkb"
+    string(1) "8"
     [4]=>
-    string(3) "jkb"
+    string(2) "10"
     [5]=>
-    string(6) "jbhkhb"
+    string(2) "12"
   }
 }

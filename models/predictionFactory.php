@@ -1,14 +1,14 @@
 <?php
 
 class PredictionFactory {
-    
+
     private $db;
-    
+
     public function __construct(PDO $db){
-        $this->db = $db; 
+        $this->db = $db;
     }
 
-    
+
     public function save(Prediction $prediction) {
         if(isset($prediction->id)) {
             //redirect to update
@@ -16,7 +16,7 @@ class PredictionFactory {
         }
 
         $stmt = $this->db->prepare("
-            insert into predictions (predicationdate, userid, no180s, player1prediction, player2prediction)
+            insert into predictions (predictiondate, userid, no180s, player1prediction, player2prediction)
             values(:date, :userid, :num180s, :player1prediction, :player2prediction)
         ");
 
@@ -52,7 +52,7 @@ class PredictionFactory {
     public function fromPostArrays(array $preds1, array $preds2) {
 
         $predictionObjs = [];
-        
+
         foreach($preds1 as $val => $player1score) {
 
             $dt = new DateTime(date("Y/m/d H:i:s"));

@@ -9,32 +9,8 @@
     <title>Super Arrows</title>
 </head>
 <body>
-    <form method="POST" action="submittedadmin.php">
-        <?php 
-
-        
-            //change to 2d array
-            $allGames = ["Match1", "Match2", "Match3", "Match4", "Match5", "Match6"];
-            $i = 0;
-
-            while ($i<count($allGames))
-            {
-            foreach($allGames as $game)
-            {
-                echo "<p>".$game. "</p>";
-                echo "<p>Player 1 vs Player 2</p>";
-                echo "<input type='text' name='player1[]'/>";
-                echo "<input type='text' name='player2[]'/>";
-                $i++;
-            }
-        }
-        
-            echo "<br/><br/>";
-            echo "<input type='submit'/>";
-            
-            
-            
-        ?>
-    </form>
+    <a href='/adminmatches.php'>Matches</a>
+    <a href=''>Results</a>
+    <a href=''>Players</a>
 </body>
 </html>

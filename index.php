@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 require __DIR__."/includes/bundle.php";
 
 if(isset($_SESSION['login'])) {
     include('includes/session-logout.php');
-} else { 
+} else {
     include('includes/session-login.php');
 }
 
@@ -18,13 +18,14 @@ if(isset($_SESSION['login'])) {
 
 <h2><a href="logics/authorize.php">Admin Page</a></h2>
     <form method="POST" action="results.php">
-        <?php 
+        <?php
 
             $mf = new MatchFactory($db);
             $q = $mf->getRoundMatches();
 
-            foreach($q as $row) {
-                echo "<p>".$row["player1first"]. " ".$row["player1last"]." vs " .$row["player2first"]. " ".$row["player2last"]." (6)</p>";
+
+            foreach($q as $match) {
+              echo "<p>".$match->player1First." ".$match->player1Last." vs ".$match->player2First." ".$match->player2Last." (6)</p>";
                 echo "<input type='number' name='player1[]' min='0'/>";
                 echo "<input type='number' name='player2[]' min='0'/>";
             }
@@ -35,7 +36,7 @@ if(isset($_SESSION['login'])) {
         <br/><br/>
         <input type='submit'/>
 
-        
+
     </form>
 </body>
 </html>

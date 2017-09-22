@@ -1,6 +1,5 @@
 <?php
 
-
 class MatchFactory {
 
     private $db;
@@ -9,10 +8,10 @@ class MatchFactory {
     }
     public function getRoundMatches() {
         $result = $this->db->query("
-            select players.firstname as player1first,
-                    players.lastname as player1last,
-                    p2.firstname as player2first,
-                    p2.lastname as player2last,
+            select players.firstname as player1first, 
+                    players.lastname as player1last, 
+                    p2.firstname as player2first, 
+                    p2.lastname as player2last, 
                     matches.id as matchid,
                     matches.matchdate,
                     matches.player1 as player1id,
@@ -27,8 +26,11 @@ class MatchFactory {
             join players as p2
             on matches.player2 = p2.id
         ;");
+
         $matches = [];
+
         foreach($result as $m){
+
             $match = new Match();
             $match->id = $m['matchid'];
             $match->matchDate = $m['matchdate'];
@@ -125,8 +127,6 @@ class MatchFactory {
       }
       return $matchObjs;
     }
-
-
 }
 
 

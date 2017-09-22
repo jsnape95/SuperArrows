@@ -1,4 +1,5 @@
 <?php
+session_start();
 class Connection{
     public function getDb()
     {
@@ -14,8 +15,11 @@ class Connection{
     }
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> NathansBranch
 
 
 ?>

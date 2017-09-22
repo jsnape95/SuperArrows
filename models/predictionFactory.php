@@ -26,8 +26,7 @@ class PredictionFactory {
             'userid' => $prediction->userId,
             'num180s' => $prediction->numberOf180s,
             'player1prediction' => $prediction->player1prediction,
-            'player2prediction' => $prediction->player2prediction,
-            //'roundId' => $prediction->roundId
+            'player2prediction' => $prediction->player2prediction
         ]);
 
         $prediction->id = $this->db->lastInsertId();
@@ -62,7 +61,6 @@ class PredictionFactory {
             $prediction->userId = 16;
             $prediction->numberOf180s = $_POST['golden180'];
             $prediction->predictionDate = $dt->format("Y-m-d H:i:s");
-            $prediction->roundId = 1;
 
             array_push($predictionObjs, $prediction);
         }

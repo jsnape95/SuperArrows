@@ -18,13 +18,15 @@ require __DIR__."/includes/bundle.php";
                     $_POST['player2']
                 );
 
+                var_dump($predictionObjs);
+
                 foreach($predictionObjs as $p) {
                     $pf->save($p);
                 }
 
                 echo "<h2>Predictions Submitted, Good Luck!</h2>";
                 echo "<input type='hidden' name='predictions' value='$dataString'/>";
-                echo "<input type='submit' value='Results'/>";
+                echo "<input type='submit' value='View Results'/>";
             ?>
         </form>
     </body>

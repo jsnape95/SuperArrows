@@ -15,11 +15,8 @@ class Connection{
     }
 }
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> NathansBranch
 
 
 ?>

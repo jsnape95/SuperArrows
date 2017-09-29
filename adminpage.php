@@ -1,6 +1,7 @@
 <html>
 <head>
     <title> Super Arrows Admin Page</title>
+    <?php require __DIR__."/includes/stylesheets.php"; ?>
 </head>
 <body>
     <h1>Welcome Admin</h1>
@@ -12,5 +13,6 @@
     <a href='/adminmatches.php'>Matches</a>
     <a href='/adminresult.php'>Results</a>
     <a href=''>Players</a>
+    <?php require __DIR__."/includes/scripts.php"; ?>
 </body>
 </html>

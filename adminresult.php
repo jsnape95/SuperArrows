@@ -4,6 +4,7 @@ require __DIR__."/includes/bundle.php";
 <html>
 <head>
     <title> Super Arrows Admin Page</title>
+    <?php require __DIR__."/includes/stylesheets.php"; ?>
 </head>
 <body>
     <h1>Welcome Admin</h1>
@@ -32,5 +33,6 @@ require __DIR__."/includes/bundle.php";
 ?>
 <input type='submit'/>
     </form>
+    <?php require __DIR__."/includes/scripts.php"; ?>
 </body>
 </html>

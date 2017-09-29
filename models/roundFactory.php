@@ -77,7 +77,7 @@ class RoundFactory{
 
         foreach($result as $r){
             $round = new Round();
-            $round->id = $r['ID'];
+            $round->id = intval($r['ID']);
             $round->startDate = $r['StartDate'];
             $round->endDate = $r['EndDate'];    
         }

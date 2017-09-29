@@ -6,10 +6,9 @@ class MatchFactory {
     public function __construct(PDO $db){
         $this->db = $db;
     }
-    public function getRoundMatches() {
-
-
-        $query = "
+    public function getRoundMatches($roundId) {
+    
+        $result = $this->db->query("
             select players.firstname as player1first, 
                     players.lastname as player1last, 
                     p2.firstname as player2first, 
@@ -27,10 +26,8 @@ class MatchFactory {
             on matches.player1 = players.id
             join players as p2
             on matches.player2 = p2.id
-        ;";
-
-    
-        $result = $this->db->query($query);
+            where roundsid = $roundId
+        ");
 
         
 
@@ -39,18 +36,18 @@ class MatchFactory {
         foreach($result as $m){
 
             $match = new Match();
-            $match->id = $m['matchid'];
+            $match->id = intval($m['matchid']);
             $match->matchDate = $m['matchdate'];
-            $match->player1Id = $m['player1id'];
+            $match->player1Id = intval($m['player1id']);
             $match->player1First = $m['player1first'];
             $match->player1Last = $m['player1last'];
-            $match->player2Id = $m['player2id'];
+            $match->player2Id = intval($m['player2id']);
             $match->player2First = $m['player2first'];
             $match->player2Last = $m['player2last'];
-            $match->player1Score = $m['player1score'];
-            $match->player2Score = $m['player2score'];
-            $match->match180s = $m['no180s'];
-            $match->roundsId = $m['roundid'];
+            $match->player1Score = intval($m['player1score']);
+            $match->player2Score = intval($m['player2score']);
+            $match->match180s = intval($m['no180s']);
+            $match->roundsId = intval($m['roundid']);
             array_push($matches, $match);
         }
         return $matches;
@@ -66,15 +63,6 @@ class MatchFactory {
             values (:matchdate, :player1, :player2, :player1score, :player2score, :no180s, :roundsid)
         ");
         $result = $stmt->execute([
-            'matchdate' => $match->matchDate,
-            'player1' => $match->player1Id,
-            'player2' => $match->player2Id,
-            'player1score' => $match->player1Score,
-            'player2score' => $match->player2Score,
-            'no180s' => $match->match180s,
-            'roundsid' => $match->roundsId
-        ]);
-        var_dump([
             'matchdate' => $match->matchDate,
             'player1' => $match->player1Id,
             'player2' => $match->player2Id,

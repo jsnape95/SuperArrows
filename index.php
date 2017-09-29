@@ -3,8 +3,16 @@
 <html>
     <head>
         <title>Super Arrows</title>
+        <!-- this stylesheet thing needs changing -->
+        <?php require __DIR__."/includes/stylesheets.php"; ?>
     </head>
     <body>
+        <div class='row'>
+            <div class='col-md-2 col-md-offset-3'>
+                <p>Test</p>
+            </div>
+        </div>
+
         <h4>
             <a href="logics/authorize.php">Admin Page</a> |
             <a href='generateResults.php'>View Results</a>
@@ -50,6 +58,17 @@
                     }
                 }
             ?>
+
+            <button id="b"></button>
         </div>
+
+
+
+        <?php require __DIR__."/includes/scripts.php"; ?>
+        <script>
+            $('#b').click(function(){
+                alert("hello");
+            });
+        </script>        
     </body>
 </html>

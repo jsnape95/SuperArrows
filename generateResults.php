@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Super Arrows</title>
+    <?php require __DIR__."/includes/stylesheets.php"; ?>
 </head>
 <body>
 
@@ -25,5 +26,6 @@
                 echo "You have score $roundScore points this round!";
             }
         ?>
+        <?php require __DIR__."/includes/scripts.php"; ?>
 </body>
 </html>

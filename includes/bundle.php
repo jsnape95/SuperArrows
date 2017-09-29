@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(E_ERROR | E_PARSE);
+
 date_default_timezone_set('UTC');
 
 spl_autoload_register(function($className){
@@ -10,6 +12,10 @@ spl_autoload_register(function($className){
         }
     }
 });
+
+include "/plugins/jquery/jquery-3.2.1.min.js";
+include "/plugins/bootstrap/js/bootstrap.min.js";
+
 
 function getCurrentRound(){
     $currentDate = new DateTime(date("Y/m/d H:i:s"));
@@ -25,6 +31,7 @@ function getCurrentRound(){
 
 $DB = new Connection();
 $db = $DB->getDb();
+
 
 
 ?>

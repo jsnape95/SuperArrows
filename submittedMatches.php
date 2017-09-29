@@ -3,6 +3,7 @@
 <html>
     <head>
         <title>Super Arrows</title>
+        <?php require __DIR__."/includes/stylesheets.php"; ?>
     </head>
     <body>
             <?php
@@ -45,5 +46,6 @@
             // fclose($fp);
             // ob_end_clean();
             ?>
+            <?php require __DIR__."/includes/scripts.php"; ?>
     </body>
 </html>

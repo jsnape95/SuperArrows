@@ -7,6 +7,7 @@ require __DIR__."/includes/bundle.php";
 <html>
     <head>
         <title>Super Arrows</title>
+        <?php require __DIR__."/includes/stylesheets.php"; ?>
     </head>
     <body>
             <?php 
@@ -24,5 +25,6 @@ require __DIR__."/includes/bundle.php";
 
                 echo "<h2>Predictions Submitted, Good Luck!</h2>";
             ?>
+            <?php require __DIR__."/includes/scripts.php"; ?>
     </body>
 </html>

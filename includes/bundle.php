@@ -15,7 +15,7 @@ spl_autoload_register(function($className){
 
 include "/plugins/jquery/jquery-3.2.1.min.js";
 include "/plugins/bootstrap/js/bootstrap.min.js";
-
+include "connection.php";
 
 function getCurrentRound(){
     $currentDate = new DateTime(date("Y/m/d H:i:s"));

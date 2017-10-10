@@ -22,21 +22,27 @@
             <h1>Admin Player</h1>
             <br>
 
-    <?php 
-    function GetPlayers()
-    {
-    $playerfac = new PlayerFactory($db);
-    $allplayers = $playerfac->getAllPlayers();
-    
-    // echo "<p>$players->player1First $players->player1Last vs $players->player2First $players->player2Last (6)</p>";
-    // echo "test";
-    var_dump($allplayers);
-    // echo $allps[0]['player1first'];
-    }
-
-    ?>
     <?
-getAllPlayers();
+    $playerfac = new PlayerFactory($db);
+    $players = $playerfac->getAllPlayers();
+    $i = 0;
+    echo "<table>";
+    echo "<tr>";
+    echo "<th>First Name </th>";
+    echo "<th>Last Name </th>";
+    echo "<th>Edit? </th>";
+    echo "<th>Delete? </th>";
+    echo "</tr>";
+    foreach ($players as $rows){
+        echo "<tr>";
+        echo "<td>" . $rows['playerfirst'] . "</td>";
+        echo "<td>" . $rows['playerlast'] . "</td>";
+        echo "</tr>";
+    }
+    echo "</table>";    
+    
+
+    // print_r($players[0][playerfirst]);
 ?>
          </body>
 </html>

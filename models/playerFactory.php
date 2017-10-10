@@ -34,9 +34,10 @@ class PlayerFactory {
             from players
         ;");
 
+        $results=$players->fetchAll();
+        return $results;
         //loop through $p
         //create a new player and add to array
-
         $playerArray=[];
 
         foreach($players as $player){
@@ -49,9 +50,13 @@ class PlayerFactory {
 
 
         return $playerArray;
+        }
+   public function GetPlayers()
+    {
+    $allplayers = $this->getAllPlayers();
+    // echo "<p>$players->player1First $players->player1Last vs $players->player2First $players->player2Last (6)</p>";
+    // echo "test";
+    // var_dump($allplayers);
     }
-
-
-  }
-
+  }  
 ?>

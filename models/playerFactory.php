@@ -47,8 +47,6 @@ class PlayerFactory {
             $p->lastname=$player['playerlast'];
             array_push($playerArray, $p);
         }
-
-
         return $playerArray;
         }
    public function GetPlayers()
@@ -65,13 +63,25 @@ class PlayerFactory {
             insert into players (firstname, lastname)
             values(:insertfirstname, :insertlastname)
         ");
-
         $result = $stmt->execute([
-
             'insertfirstname' => $_POST['insertfirstname'],
             'insertlastname' => $_POST['insertlastname']
-
         ]);
+  }
+
+  public function updatePlayer()
+  {
+    $stmt = $this->db->prepare("
+    update players set
+    firstname = :updatefirstname,
+    lastname = :updatelastname 
+    where id = :id"
+  );
+    $result = $stmt->execute([
+        'updatefirstname' => $_POST['updatefirstname'],
+        'updatelastname' => $_POST['updatelastname'],
+        'id' => $_POST['id']
+    ]);
   }
 }  
 ?>

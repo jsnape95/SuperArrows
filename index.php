@@ -7,11 +7,7 @@
         <?php require __DIR__."/includes/stylesheets.php"; ?>
     </head>
     <body>
-        <div class='row'>
-            <div class='col-md-2 col-md-offset-3'>
-                <p>Test</p>
-            </div>
-        </div>
+    <div class='container'>
 
         <h4>
             <a href="logics/authorize.php">Admin Page</a> |
@@ -58,17 +54,14 @@
                     }
                 }
             ?>
-
-            <button id="b"></button>
         </div>
 
 
 
+               
+        </div>
         <?php require __DIR__."/includes/scripts.php"; ?>
         <script>
-            $('#b').click(function(){
-                alert("hello");
-            });
-        </script>        
+        </script> 
     </body>
 </html>

@@ -19,7 +19,20 @@
             <br>
     
             <?php
-
+session_start();
+if (isset($_SESSION['user']))
+{
+    include "includes/logoutbutton.php";
+}
+	if(isset($_SESSION['admin']))
+	{
+        include "includes/logoutbutton.php";
+	}
+    if(empty($_SESSION))
+    {
+        echo 'Please enter your log in details';
+        include "includes/login.php";        
+    }
                 $rf = new RoundFactory($db);
                 $currentRound = $rf->getCurrentRound();
 

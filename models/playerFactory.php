@@ -33,27 +33,25 @@ class PlayerFactory {
               players.lastname as playerlast
             from players
         ;");
-        $allps = $players->fetchAll();
-        return $playertest;
-        echo $playertest;
+
         //loop through $p
         //create a new player and add to array
 
-        // $playerArray=[];
+        $playerArray=[];
 
-        // foreach($players as $player){
-        //     $p = new Player();
-        //     $p->id=$player['id'];
-        //     $p->firstname=$player['playerfirst'];
-        //     $p->lastname=$player['playerlast'];
-        //     array_push($playerArray, $p);
-        // }
+        foreach($players as $player){
+            $p = new Player();
+            $p->id=$player['id'];
+            $p->firstname=$player['playerfirst'];
+            $p->lastname=$player['playerlast'];
+            array_push($playerArray, $p);
+        }
 
 
-        // return $playerArray;
-        
+        return $playerArray;
     }
-}
 
+
+  }
 
 ?>

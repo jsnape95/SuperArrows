@@ -12,7 +12,7 @@
 <body>
     <a href='/adminmatches.php'>Matches</a>
     <a href='/adminresult.php'>Results</a>
-    <a href='adminplayers.php'>Players</a>
+    <a href='/adminplayers.php'>Players</a>
     <?php require __DIR__."/includes/scripts.php"; ?>
 </body>
 </html>

@@ -25,7 +25,6 @@
     <?
     $playerfac = new PlayerFactory($db);
     $players = $playerfac->getAllPlayers();
-    $i = 0;
     echo "<table>";
     echo "<tr>";
     echo "<th>First Name </th>";
@@ -37,12 +36,22 @@
         echo "<tr>";
         echo "<td>" . $rows['playerfirst'] . "</td>";
         echo "<td>" . $rows['playerlast'] . "</td>";
+        echo "<td><a href='testlink.php'>Edit Player</a></td>";
+        echo "<td><a href='testlink.php'>Remove Player?</a></td>";        
         echo "</tr>";
     }
     echo "</table>";    
-    
 
+echo " <form method='POST' action='playerinsert.php'>";
+echo "Fill in the below fields to add a player</br>";
+echo "First Name";
+echo "<input type='text' name='insertfirstname'/>";
+echo "Last Name";
+echo "<input type='text' name='insertlastname'/>";
+echo "<br/><br/>";
+echo "<input type='submit'/>";
+echo "</form>";
     // print_r($players[0][playerfirst]);
 ?>
-         </body>
+    </body>
 </html>

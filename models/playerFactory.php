@@ -58,5 +58,20 @@ class PlayerFactory {
     // echo "test";
     // var_dump($allplayers);
     }
-  }  
+
+    public function savePlayer() 
+    {
+        $stmt = $this->db->prepare("
+            insert into players (firstname, lastname)
+            values(:insertfirstname, :insertlastname)
+        ");
+
+        $result = $stmt->execute([
+
+            'insertfirstname' => $_POST['insertfirstname'],
+            'insertlastname' => $_POST['insertlastname']
+
+        ]);
+  }
+}  
 ?>

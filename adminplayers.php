@@ -25,17 +25,18 @@
     <?php 
     function GetPlayers()
     {
-        g
     $playerfac = new PlayerFactory($db);
-
     $allplayers = $playerfac->getAllPlayers();
     
+    // echo "<p>$players->player1First $players->player1Last vs $players->player2First $players->player2Last (6)</p>";
+    // echo "test";
     var_dump($allplayers);
     // echo $allps[0]['player1first'];
     }
 
     ?>
-
-
+    <?
+getAllPlayers();
+?>
          </body>
 </html>

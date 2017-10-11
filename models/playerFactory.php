@@ -83,5 +83,14 @@ class PlayerFactory {
         'id' => $_POST['id']
     ]);
   }
+  public function deletePlayer(){
+      $stmt = $this->db->prepare("
+      delete from players where id = :id
+      ");
+
+      $result = $stmt->execute([
+          'id' => $_GET['id']
+      ]);
+  }
 }  
 ?>

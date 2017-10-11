@@ -27,6 +27,7 @@
     $players = $playerfac->getAllPlayers();
     echo "<table>";
     echo "<tr>";
+    echo "<th>Player ID </th>";    
     echo "<th>First Name </th>";
     echo "<th>Last Name </th>";
     echo "<th>Edit? </th>";
@@ -34,14 +35,16 @@
     echo "</tr>";
     foreach ($players as $rows){
         echo "<tr>";
+        echo "<td>" . $rows['id'] . "</td>";        
         echo "<td>" . $rows['playerfirst'] . "</td>";
         echo "<td>" . $rows['playerlast'] . "</td>";
-        echo "<td><a href='testlink.php'>Edit Player</a></td>";
-        echo "<td><a href='testlink.php'>Remove Player?</a></td>";        
+        echo "<td><a href=updateplayer.php?id=".$rows["id"].">Edit Player</a></td>";
+        echo "<td><a href=removelogic.php?id=".$rows["id"].">Remove Player</a></td>";
         echo "</tr>";
     }
     echo "</table>";    
-
+    
+    
 echo " <form method='POST' action='playerinsert.php'>";
 echo "Fill in the below fields to add a player</br>";
 echo "First Name";

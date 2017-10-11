@@ -38,8 +38,8 @@
         echo "<td>" . $rows['id'] . "</td>";        
         echo "<td>" . $rows['playerfirst'] . "</td>";
         echo "<td>" . $rows['playerlast'] . "</td>";
-        echo "<td><a href=updateplayer.php?id=".$rows["id"].">Edit Player</a></td>";
-        echo "<td><a href=removelogic.php?id=".$rows["id"].">Remove Player</a></td>";
+        echo "<td><a href=/logics/updateplayer.php?id=".$rows["id"].">Edit Player</a></td>";
+        echo "<td><a href=/logics/removelogic.php?id=".$rows["id"].">Remove Player</a></td>";
         echo "</tr>";
     }
     echo "</table>";    

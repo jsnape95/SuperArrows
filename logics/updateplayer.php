@@ -1,4 +1,4 @@
-<?php require __DIR__."/includes/bundle.php"; ?>
+<?php require __DIR__."/../includes/bundle.php"; ?>
 
 <form action="updatelogic.php" method="POST">
     First Name:<br />

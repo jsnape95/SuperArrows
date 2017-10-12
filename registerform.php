@@ -26,7 +26,7 @@ $db = $c->getDb();
             FROM users
             WHERE
                 username = :username";
-        $query_params = array(':username' => $_POST['username']);
+        $query_params = array('username' => $_POST['username']);
         // try and catch command to run the query in the SQL database
         try
         {
@@ -52,7 +52,7 @@ $db = $c->getDb();
                 email = :email";
         
         $query_params = array(
-            ':email' => $_POST['email']);
+            'email' => $_POST['email']);
         
         try
         {
@@ -102,25 +102,27 @@ $db = $c->getDb();
         }
         // the tokens are now prepared to be inserted within the database
         $query_params = array(
-            ':firstname' => $_POST['firstname'],
-            ':secondname' => $_POST['secondname'],            
-            ':username' => $_POST['username'],
-            ':password' => $password,
-            ':acctype' => "U",
-            ':salt' => $salt,
-            ':email' => $_POST['email']);
+            'firstname' => $_POST['firstname'],
+            'secondname' => $_POST['secondname'],            
+            'username' => $_POST['username'],
+            'password' => $password,
+            'acctype' => "U",
+            'salt' => $salt,
+            'email' => $_POST['email']);
         // try command to insert the user into the database
+        var_dump($query_params);
         try
         {
             $state1 = $db->prepare($query);
             $result = $state1->execute($query_params);
+            echo $result;
         }
         catch(PDOException $ex)
         {
             die("Failed to run query: " . $ex->getMessage());
         }
         //header command to redirect the user to the login page
-       // header("Location: index.php");
+        //header("Location: index.php");
         //die command to prevent the php script executing when leaving
         //die("Redirecting to index.php");
     }

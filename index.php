@@ -4,37 +4,36 @@
     <head>
         <title>Super Arrows</title>
         <!-- this stylesheet thing needs changing -->
-        <?php require __DIR__."/includes/stylesheets.php"; ?>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/fontAwesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/arrows.css"/>
     </head>
     <body>
+    <?php include_once('includes/productHeader.inc.php'); ?>
+    <?php include_once('includes/navBar.inc.php'); ?>
     <div class='container'>
-
-        <h4>
-            <a href="logics/authorize.php">Admin Page</a> |
-            <a href='generateResults.php'>View Results</a>
-        </h4>
-        <hr>
         <div align='center'>
-            <h1>Welcome to Super Arrows!</h1>
-            <br>
-    
             <?php
-session_start();
-if (isset($_SESSION['user']))
-{
-    include "includes/logoutbutton.php";
-}
-if(isset($_SESSION['admin']))
-{
-    include "includes/logoutbutton.php";
-}
-if(empty($_SESSION))
-{
-    echo 'Please enter your log in details';
-    include "includes/login.php";        
-}
+// session_start();
+// if (isset($_SESSION['user']))
+// {
+//     include "includes/logoutbutton.php";
+// }
+// if(isset($_SESSION['admin']))
+// {
+//     include "includes/logoutbutton.php";
+// }
+// if(empty($_SESSION))
+// {
+//     echo 'Please enter your log in details';
+//     include "includes/login.php";        
+// }
                 $rf = new RoundFactory($db);
                 $currentRound = $rf->getCurrentRound();
+                echo $currentRound->idin;
 
                 $mf = new MatchFactory($db);
                 $q = $mf->getRoundMatches($currentRound->id);
@@ -44,10 +43,13 @@ if(empty($_SESSION))
                 $pf = new PredictionFactory($db);
                 $preds = $pf->getRoundPredictions($currentRound->id);
 
+
                 if(count($q) == 0){
                     echo "No matches scheduled";
                 } else {
-                    echo "<h3><u>Round $currentRound->id</u></h3>";
+                    echo "<h1><u>Round $currentRound->id</u></h1>";
+                    echo "<h3>Enter your predicitons for this round.</h3>";
+                    echo "<br><br>";
 
                     if(count($preds) != 0) {
                         echo "<p>Predictions for this round already submitted</p>";
@@ -62,7 +64,7 @@ if(empty($_SESSION))
                             echo "<p>Golden 180's</p>";
                             echo "<input type='number' name='golden180' min='0'/>";
                             echo "<br/><br/>";
-                            echo "<input type='submit'/>";
+                            echo "<input type='submit' class='btn btn-success'/>";
                         echo "</form>";
                     }
                 }

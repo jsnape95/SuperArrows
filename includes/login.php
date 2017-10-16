@@ -8,10 +8,8 @@
     Password:
     <input type="password" name="password" value="" />
     <br />
+</li>
     <input type="submit" value="Login" />
+</li>
 
-    <br />
-</li>
-    <li>
-</li>
 </form>

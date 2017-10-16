@@ -1,3 +1,4 @@
+<? session_start();?>
 <html>
 <head>
     <title> Super Arrows Admin Page</title>
@@ -9,8 +10,9 @@
     <link rel="stylesheet" type="text/css" href="css/arrows.css"/>
 </head>
 <body>
-    <?php include_once('includes/productHeader.inc.php'); ?>
-    <?php include_once('includes/navBar.inc.php'); ?>
+    <?php include 'includes/productHeader.inc.php'; ?>
+    <?php include 'includes/navBar.inc.php'; ?>
+    <? include 'includes/connection.php';?>
     <div class='container'>
         <h1>Welcome Admin</h1>
         

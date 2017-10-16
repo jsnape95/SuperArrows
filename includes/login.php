@@ -1,4 +1,4 @@
-<a style="color: white; display: inline; float: right; white-space: nowrap; overflow:hidden;"</a>
+<a style="color: white; display: inline; float: right; white-space: nowrap; overflow:hidden;"></a>
 <form action="/includes/loginform.php" method="post">
     Username:<br />
     <input type="text" name="username" value="<?php echo $submitted_username; ?>" />

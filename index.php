@@ -17,6 +17,7 @@
         <div class='container'>
             <div align='center'>
                 <?php
+
                     $rf = new RoundFactory($db);
                     $currentRound = $rf->getCurrentRound();
                     echo $currentRound->idin;

@@ -13,7 +13,6 @@
                 <?
     // <!-- <form class="loginForm" style="display: inline-block; float: right; margin-top: 10px;" action="../logic/checkLogin.php" method="post">
     //   <div style="display: inline-block;"> -->
-
     if (isset($_SESSION['user']))
     {
         include "includes/logoutbutton.php";

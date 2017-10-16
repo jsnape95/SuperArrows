@@ -337,6 +337,8 @@ body {
     color: #fff;
     background: #122d68 20%;
     position: static;
+    box-shadow: 0px 10px 30px #FAB066;
+    
 }
 #navHeader [type=text], [type=password] {
     width: 100px;
@@ -348,13 +350,14 @@ body {
     white-space:nowrap;
     
 }
+li:hover [href] {
+    background-color: #FAB066;
+}
 #navHeader [type=submit] {
     /* width: 150px; */
     color: #000;
     height:20px;
     font-size: 12px;
-    position: absolute;
-    white-space:nowrap;
 }
 
 #logoDiv {
@@ -366,6 +369,8 @@ body {
 #logoDiv img {
     height: 115px;
     width: 150px;
+        box-shadow: 0px 10px 30px #449d44;
+
 }
 
 #navList {

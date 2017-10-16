@@ -13,9 +13,4 @@ class Connection{
         return $pdo;
     }
 }
-
-
-
-
-
 ?>

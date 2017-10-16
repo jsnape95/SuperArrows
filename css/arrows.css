@@ -7,7 +7,10 @@ body {
     background-color: #122D7C;
     color: white;
 }
-
+.loginform {
+    width: 375px;
+    height: 25px;
+  }
 .h-34 {
     height: 34px;
 }
@@ -335,6 +338,24 @@ body {
     background: #122d68 20%;
     position: static;
 }
+#navHeader [type=text], [type=password] {
+    width: 100px;
+    height:20px;
+    font-size:12px;
+    color: #000;
+    /* height: auto; */
+    position: absolute;
+    white-space:nowrap;
+    
+}
+#navHeader [type=submit] {
+    /* width: 150px; */
+    color: #000;
+    height:20px;
+    font-size: 12px;
+    position: absolute;
+    white-space:nowrap;
+}
 
 #logoDiv {
     width: 230px;
@@ -344,11 +365,12 @@ body {
 
 #logoDiv img {
     height: 115px;
-    width: 230px;
+    width: 150px;
 }
 
 #navList {
     font-size: 18px;
+    
 }
 
 #navList a {
@@ -358,11 +380,13 @@ body {
 }
 
 #navList li {
+    float:left;
     padding-right: 20px;
+    width:200px;
 }
-
+/* 
 #navList li:hover {
-    transform: scale(1.2) perspective(1px);
+    transform: scale(1.2) perspective(1px); */
 }
 
 #navList li a:focus {

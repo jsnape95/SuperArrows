@@ -1,4 +1,3 @@
-
 <div id="product-wrapper">
     <div class="container">
         <div class="product-list">

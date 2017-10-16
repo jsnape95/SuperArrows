@@ -29,6 +29,7 @@ class MatchFactory {
             where roundsid = $roundId
         ");
 
+
         
 
         $matches = [];
@@ -57,7 +58,6 @@ class MatchFactory {
             //redirect to update
             return $this->update($match);
         }
-        echo "HIT";
         $stmt = $this->db->prepare("
             insert into matches (matchdate, player1, player2, player1score, player2score, no180s, roundsid)
             values (:matchdate, :player1, :player2, :player1score, :player2score, :no180s, :roundsid)

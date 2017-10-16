@@ -1,0 +1,412 @@
+html,
+body {
+    height: 100% !important;
+    width: 100% !important;
+    font-family: 'Arial';
+    font-size: 1em;
+    background-color: #122D7C;
+    color: white;
+}
+
+.h-34 {
+    height: 34px;
+}
+
+.w-100 {
+    width: 100px;
+}
+
+.w-100p {
+    width: 100%;
+}
+
+.w-45p {
+    width: 45%;
+}
+
+.w-50p {
+    width: 50%;
+}
+
+.w-55p {
+    width: 55%;
+}
+
+.w-25p {
+    width: 25%;
+}
+
+.w-33p {
+    width: 33%;
+}
+
+.w-30p {
+    width: 30%;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+}
+
+.txt-underline {
+    text-decoration: underline;
+}
+
+.txt-ctr {
+    text-align: center;
+}
+
+.txt-left {
+    text-align: left;
+}
+
+.txt-right {
+    text-align: right;
+}
+
+.cl-white {
+    color: white;
+}
+
+.cl-black {
+    color: black;
+}
+
+.cl-success {
+    color: #5cb85c;
+}
+
+.cl-warning {
+    color: #e13443;
+}
+
+.cl-gold {
+    color: #bf9832;
+}
+
+.jockey-gold {
+    color: #deb146;
+}
+
+.jockey-silver {
+    color: #9c9c9c;
+}
+
+.jockey-bronze {
+    color: #ce814d;
+}
+
+.mar-auto {
+    margin: auto;
+}
+
+.mar-0 {
+    margin: 0px;
+}
+
+.mar-10 {
+    margin: 10px;
+}
+
+.mart-0 {
+    margin-top: 0px;
+}
+
+.mart-5 {
+    margin-top: 5px;
+}
+
+.mart-10 {
+    margin-top: 10px;
+}
+
+.mart-15 {
+    margin-top: 15px;
+}
+
+.mart-20 {
+    margin-top: 20px;
+}
+
+.mart-10p {
+    margin-top: 10%;
+}
+
+.mart-28 {
+    margin-top: 28px;
+}
+
+.mart-30 {
+    margin-top: 30px;
+}
+
+.marb-0 {
+    margin-bottom: 0px;
+}
+
+.marb-5 {
+    margin-bottom: 5px;
+}
+
+.marb-10 {
+    margin-bottom: 10px;
+}
+
+.marb-14 {
+    margin-bottom: 14px;
+}
+
+.marb-15 {
+    margin-bottom: 15px;
+}
+
+.marb-50 {
+    margin-bottom: 50px;
+}
+
+.marl-25p {
+    margin-left: 25%;
+}
+
+.marr-25p {
+    margin-right: 25%;
+}
+
+.pad-0 {
+    padding: 0px;
+}
+
+.pad-5 {
+    padding: 5px;
+}
+
+.pad-10 {
+    padding: 10px;
+}
+
+.padt-5 {
+    padding-top: 5px;
+}
+
+.padt-10 {
+    padding-top: 10px;
+}
+
+.padt-50 {
+    padding-top: 50px;
+}
+
+.padt-10p {
+    padding-top: 10%;
+}
+
+.padb-10 {
+    padding-bottom: 10px;
+}
+
+.padl-10 {
+    padding-left: 10px;
+}
+
+.padl-40 {
+    padding-left: 40px;
+}
+
+.padl-20p {
+    padding-left: 20%;
+}
+
+.padr-40 {
+    padding-right: 40px;
+}
+
+.padr-20p {
+    padding-right: 20%;
+}
+
+.fa-1p4x {
+    font-size: 1em !important;
+}
+
+.fs-11 {
+    font-size: 11px;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.fs-18 {
+    font-size: 18px;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+
+.disp-in {
+    display: inline;
+}
+
+.disp-bl {
+    display: block;
+}
+
+.disp-fl {
+    display: flex;
+}
+
+.pos-rel {
+    position: relative;
+}
+
+.bord-rd {
+    border-radius: 5px;
+}
+
+.bord-rd-tl {
+    border-top-left-radius: 5px;
+}
+
+.bord-rd-tr {
+    border-top-right-radius: 5px;
+}
+
+.bord-rd-bl {
+    border-bottom-left-radius: 5px;
+}
+
+.bord-rd-br {
+    border-bottom-right-radius: 5px;
+}
+
+.fl-left {
+    float: left;
+}
+
+.fl-right {
+    float: right;
+}
+
+
+/* Header */
+
+#product-wrapper {
+    padding: 0;
+    margin: 0;
+    background-color: #262626;
+    position: fixed;
+    width: 100%;
+}
+
+.product-image {
+    height: 18px;
+}
+
+.product-item {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 12px;
+}
+
+.product-image-large {
+    height: 20px;
+}
+
+.product-list {
+    margin: auto;
+    height: 28px;
+    display: table;
+}
+
+
+/* Navbar */
+
+#navHeader {
+    outline: none;
+    width: 100%;
+    height: auto;
+    color: #fff;
+    background: #122d68 20%;
+    position: static;
+}
+
+#logoDiv {
+    width: 230px;
+    height: auto;
+    float: left;
+}
+
+#logoDiv img {
+    height: 115px;
+    width: 230px;
+}
+
+#navList {
+    font-size: 18px;
+}
+
+#navList a {
+    color: #fff;
+    outline: none;
+    text-decoration: none;
+}
+
+#navList li {
+    padding-right: 20px;
+}
+
+#navList li:hover {
+    transform: scale(1.2) perspective(1px);
+}
+
+#navList li a:focus {
+    transform: scale(1.2) perspective(1px);
+}
+
+
+/* Inner Banner */
+
+.contentBanner {
+    background-image: url('../img/contentBanner.jpg');
+    background-size: 1140px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+    min-height: 700px;
+}
+
+
+/* Footer */
+
+#footerTop {
+    width: 100%;
+}
+
+#footerBottom {
+    width: 100%;
+}
+
+#topBtn {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+footer hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 0px solid;
+    padding: 0;
+    background: white;
+}
+
+.black-input{
+    color: #000;
+}

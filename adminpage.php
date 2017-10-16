@@ -1,18 +1,24 @@
 <html>
 <head>
     <title> Super Arrows Admin Page</title>
-    <?php require __DIR__."/includes/stylesheets.php"; ?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontAwesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/arrows.css"/>
 </head>
 <body>
-    <h1>Welcome Admin</h1>
-<html>
-<head>
-    <title>Super Arrows</title>
-</head>
-<body>
-    <a href='/adminmatches.php'>Matches</a>
-    <a href='/adminresult.php'>Results</a>
-    <a href=''>Players</a>
+    <?php include_once('includes/productHeader.inc.php'); ?>
+    <?php include_once('includes/navBar.inc.php'); ?>
+    <div class='container'>
+        <h1>Welcome Admin</h1>
+        
+        <a href='/adminmatches.php'>Matches</a>
+        <a href='/adminresult.php'>Results</a>
+        <a href='/adminplayers.php'>Players</a>
+    
+    </div>
     <?php require __DIR__."/includes/scripts.php"; ?>
 </body>
 </html>

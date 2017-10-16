@@ -34,9 +34,10 @@ class PlayerFactory {
             from players
         ;");
 
+        $results=$players->fetchAll();
+        return $results;
         //loop through $p
         //create a new player and add to array
-
         $playerArray=[];
 
         foreach($players as $player){
@@ -46,12 +47,50 @@ class PlayerFactory {
             $p->lastname=$player['playerlast'];
             array_push($playerArray, $p);
         }
-
-
         return $playerArray;
+        }
+   public function GetPlayers()
+    {
+    $allplayers = $this->getAllPlayers();
+    // echo "<p>$players->player1First $players->player1Last vs $players->player2First $players->player2Last (6)</p>";
+    // echo "test";
+    // var_dump($allplayers);
     }
 
-
+    public function savePlayer() 
+    {
+        $stmt = $this->db->prepare("
+            insert into players (firstname, lastname)
+            values(:insertfirstname, :insertlastname)
+        ");
+        $result = $stmt->execute([
+            'insertfirstname' => $_POST['insertfirstname'],
+            'insertlastname' => $_POST['insertlastname']
+        ]);
   }
 
+  public function updatePlayer()
+  {
+    $stmt = $this->db->prepare("
+    update players set
+    firstname = :updatefirstname,
+    lastname = :updatelastname 
+    where id = :id"
+  );
+    $result = $stmt->execute([
+        'updatefirstname' => $_POST['updatefirstname'],
+        'updatelastname' => $_POST['updatelastname'],
+        'id' => $_POST['id']
+    ]);
+  }
+  public function deletePlayer(){
+      $stmt = $this->db->prepare("
+      delete from players where id = :id
+      ");
+
+      $result = $stmt->execute([
+          'id' => $_GET['id']
+      ]);
+  }
+}  
 ?>

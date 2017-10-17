@@ -45,7 +45,7 @@ $db = $c->getDb();
             session_start();
             $_SESSION['admin'] = $row;
             $submitted_username = htmlentities($_POST['username']);      
-            header('Location: ../index.php');
+            header('Location: ../index.php?successful');
             die();
         }
         else if ($login_ok AND $row['AccType']=='U'){
@@ -55,13 +55,13 @@ $db = $c->getDb();
             $_SESSION['user'] = $row;
 
             $submitted_username = htmlentities($_POST['username']);            
-            header('Location: ../index.php');
+            header('Location: ../index.php?successful');
             die();
         }
         else
         {
-            print("Login Failed.");
-            $submitted_username = htmlentities($_POST['username']);
+            header('Location: ../index.php?failed');
+            // $submitted_username = htmlentities($_POST['username']);
         }
     }
     

@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
   require __DIR__."/includes/bundle.php";
   session_start();
+=======
+require __DIR__."/includes/bundle.php";
+session_start();
+>>>>>>> master
 ?>
 <html>
 <head>

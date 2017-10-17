@@ -7,6 +7,7 @@ $db = $c->getDb();
     if(!empty($_POST))
     {
         $query = "SELECT
+                ID,
                 Username,
                 Password,
                 Salt,
@@ -39,15 +40,15 @@ $db = $c->getDb();
         }
 
         if ($login_ok AND $row['AccType']=='A'){
-      unset($row['Salt']);
-      unset($row['Password']);
-      session_start();
-      $_SESSION['admin'] = $row;
-      $submitted_username = htmlentities($_POST['username']);      
-      header('Location: ../index.php');
-      die();
-      }
-            if ($login_ok AND $row['AccType']=='U'){
+            unset($row['Salt']);
+            unset($row['Password']);
+            session_start();
+            $_SESSION['admin'] = $row;
+            $submitted_username = htmlentities($_POST['username']);      
+            header('Location: ../index.php');
+            die();
+        }
+        else if ($login_ok AND $row['AccType']=='U'){
             unset($row['Salt']);
             unset($row['Password']);
             session_start();
@@ -56,7 +57,7 @@ $db = $c->getDb();
             $submitted_username = htmlentities($_POST['username']);            
             header('Location: ../index.php');
             die();
-            }
+        }
         else
         {
             print("Login Failed.");

@@ -58,7 +58,7 @@ session_start();
                                 echo "<br/><br/>";
 
                                 if(empty($_SESSION)) {
-                                    echo "<p>You must be logged in to be able to make a prediction.</p>";
+                                    echo "<p class='text-danger'>You must be logged in to be able to make a prediction.</p>";
                                 } else {
                                     echo "<input type='submit' class='btn btn-success'/>";
                                 }

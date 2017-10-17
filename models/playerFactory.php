@@ -35,12 +35,11 @@ class PlayerFactory {
         ;");
 
         $results=$players->fetchAll();
-        return $results;
         //loop through $p
         //create a new player and add to array
         $playerArray=[];
 
-        foreach($players as $player){
+        foreach($results as $player){
             $p = new Player();
             $p->id=$player['id'];
             $p->firstname=$player['playerfirst'];

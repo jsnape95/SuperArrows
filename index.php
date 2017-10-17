@@ -29,8 +29,11 @@ session_start();
                     
                     $matches = serialize($q);
 
+                    $uf = new UserFactory($db);
+                    $currentUser = $uf->getCurrentUser();
+
                     $pf = new PredictionFactory($db);
-                    $preds = $pf->getRoundPredictions($currentRound->id);
+                    $preds = $pf->getRoundPredictions($currentRound->id, $currentUser->id);
 
 
                     if(count($q) == 0){

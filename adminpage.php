@@ -19,6 +19,8 @@
         <a href='/adminmatches.php'>Matches</a>
         <a href='/adminresult.php'>Results</a>
         <a href='/adminplayers.php'>Players</a>
+        <a href='/adminusers.php'>Users</a>
+
     
     </div>
     <?php require __DIR__."/includes/scripts.php"; ?>

@@ -40,7 +40,34 @@
 
             return $user;
         }
+        public function getAllUsers(){
 
-    }
+            $users= $this->db->query("select * from users");
 
+            $results=$users->fetchAll();
+            return $results;
+            var_dump($results);
+
+        }
+        public function deleteUser(){
+            $stmt = $this->db->prepare("
+            delete from users where id = :id
+            ");
+      
+            $result = $stmt->execute([
+                'id' => $_GET['ID']
+            ]);
+        }
+    public function changeType()
+    {
+      $stmt = $this->db->prepare("
+      update users
+      set AccType = CASE WHEN AccType = 'U' THEN 'A' ELSE 'U' END  
+      where id = :id"
+    );
+      $result = $stmt->execute([
+          'id' => $_GET['ID']
+      ]);
+    }    
+}
 ?>

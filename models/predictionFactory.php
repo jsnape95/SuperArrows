@@ -49,10 +49,11 @@ class PredictionFactory {
         ]);
     }
 
-    public function fromPostArrays(array $preds1, array $preds2, array $matches) {
+    public function fromPostArrays(array $preds1, array $preds2, array $matches, $userId) {
+
+        
 
         $predictionObjs = [];
-
 
         foreach($matches as $val => $match) {
             $dt = new DateTime(date("Y/m/d H:i:s"));
@@ -61,7 +62,7 @@ class PredictionFactory {
             $prediction->matchId = $match->id;
             $prediction->player1prediction = $preds1[$val];
             $prediction->player2prediction = $preds2[$val];
-            $prediction->userId = 16;
+            $prediction->userId = $userId;
             $prediction->numberOf180s = $_POST['golden180'];
             $prediction->predictionDate = $dt->format("Y-m-d H:i:s");
 
@@ -91,7 +92,10 @@ class PredictionFactory {
         return $predictionObjs;
     }
 
-    public function getRoundPredictions($roundId){
+    public function getRoundPredictions($roundId, $userId){
+
+        
+
         $result = $this->db->query("
             select
                 predictions.player1prediction as p1pred,
@@ -101,7 +105,7 @@ class PredictionFactory {
             on matches.id = predictions.matchid
             where 
                 matches.roundsid = $roundId &&
-                predictions.userid = 16
+                predictions.userid = $userId
         ");
 
         $roundPreds = [];

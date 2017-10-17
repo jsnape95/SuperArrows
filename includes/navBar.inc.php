@@ -7,7 +7,13 @@
         </div>
         <div class="disp-block" style="margin-top:4%;">
             <ul id="navList" class="list-inline">
-                <li><a href="logics/authorize.php">Admin Page</a></li>
+            <?
+                if(isset($_SESSION['admin']))
+                {
+                    echo "<li><a href='logics/authorize.php'>Admin Page</a></li>";
+                }
+            ?>
+                
                 <li><a href='generateResults.php'>View Results</a></li>
                 <?
     if (isset($_SESSION['user']))

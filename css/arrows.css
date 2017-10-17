@@ -439,3 +439,7 @@ footer hr {
 .black-input{
     color: #000;
 }
+
+#login-panel{
+    float: right;
+}

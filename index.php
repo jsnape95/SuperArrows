@@ -29,8 +29,11 @@ session_start();
                     
                     $matches = serialize($q);
 
+                    $uf = new UserFactory($db);
+                    $currentUser = $uf->getCurrentUser();
+
                     $pf = new PredictionFactory($db);
-                    $preds = $pf->getRoundPredictions($currentRound->id);
+                    $preds = $pf->getRoundPredictions($currentRound->id, $currentUser->id);
 
 
                     if(count($q) == 0){
@@ -53,7 +56,12 @@ session_start();
                                 echo "<p>Golden 180's</p>";
                                 echo "<input class='black-input' type='number' name='golden180' min='0'/>";
                                 echo "<br/><br/>";
-                                echo "<input type='submit' class='btn btn-success'/>";
+
+                                if(empty($_SESSION)) {
+                                    echo "<p>You must be logged in to be able to make a prediction.</p>";
+                                } else {
+                                    echo "<input type='submit' class='btn btn-success'/>";
+                                }
                             echo "</form>";
                         }
                     }

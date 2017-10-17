@@ -24,11 +24,13 @@
 --     FirstName varchar(30),
 --     LastName varchar(30),
 --     Username varchar(15),
---     Password int(11),
+--     Password varchar(50),
 --     Salt char(16),
 --     Email  varchar(256),
 --     AccType char(1),
 --     Points int(11),
+--     RegisterDate datetime,
+--     IP varchar(50),
 --     PRIMARY KEY ( ID )
 -- );
 
@@ -61,7 +63,7 @@
 --     FOREIGN KEY ( MatchID ) REFERENCES Matches( ID )
 -- );
 
--- DROP TABLE IF EXISTS 'Predicitons';
+-- DROP TABLE IF EXISTS 'Predictions';
 -- create table Predicitons(
 --     ID  int(11) not null AUTO_INCREMENT,
 --     PlayerMatchLinkID  int(11) not null,

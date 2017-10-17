@@ -8,6 +8,9 @@
         public $email;
         public $accountType;
         public $totalPoints;
+        public $registerdate;
+        public $ip;
+
     }
 
 ?>

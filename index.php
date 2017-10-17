@@ -53,7 +53,12 @@ session_start();
                                 echo "<p>Golden 180's</p>";
                                 echo "<input class='black-input' type='number' name='golden180' min='0'/>";
                                 echo "<br/><br/>";
-                                echo "<input type='submit' class='btn btn-success'/>";
+
+                                if(empty($_SESSION)) {
+                                    echo "<p>You must be logged in to be able to make a prediction.</p>";
+                                } else {
+                                    echo "<input type='submit' class='btn btn-success'/>";
+                                }
                             echo "</form>";
                         }
                     }

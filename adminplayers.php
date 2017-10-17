@@ -1,4 +1,7 @@
-<?php require __DIR__."/includes/bundle.php"; ?>
+<?php 
+    require __DIR__."/includes/bundle.php"; 
+    session_start();
+?>
 
 <html>
     <head>

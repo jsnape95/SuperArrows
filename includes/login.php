@@ -1,10 +1,13 @@
-<a style="color: white; display: inline; float: right; white-space: nowrap; overflow:hidden;"></a>
 <form action="/includes/loginform.php" method="post">
-    Username:<br />
-    <input type="text" name="username" value="<?php echo $submitted_username; ?>" />
-    <br /><br />
-    Password:<br />
-    <input type="password" name="password" value="" />
-    <br /><br />
+<li>
+    <input type="text" name="username" value="<?php echo $submitted_username; ?>" placeholder="Username" />
+    <br />
+</li>
+<li>
+    <input type="password" name="password" value="" placeholder="Password" />
+    <br />
+</li>
     <input type="submit" value="Login" />
+</li>
+
 </form>

@@ -33,13 +33,13 @@
                 for($i=0; $i<=5; $i++){
                     echo "<select name ='player1[]' class='black-input'>";
                     foreach($m as $player) {
-                        echo "<option value='$player->id'> $player->firstname $player->lastname</option>";
+                        echo "<option value='$player->id'>$player->firstname $player->lastname</option>";
                     }
                     echo "</select>";
                     echo " vs ";
                     echo "<select name ='player2[]' class='black-input'>";
                     foreach($m as $player) {
-                        echo "<option value='$player->id'> $player->firstname $player->lastname</option>";
+                        echo "<option value='$player->id'>$player->firstname $player->lastname</option>";
                     }
                     echo "</select>";
                     echo "<br/><br/>";

@@ -23,15 +23,20 @@
 
             <?php
                 $playerfac = new PlayerFactory($db);
-                $players = $playerfac->getAllPlayers();
-                echo "<table>";
-                echo "<tr>";
-                echo "<th>Player ID </th>";    
-                echo "<th>First Name </th>";
-                echo "<th>Last Name </th>";
-                echo "<th>Edit? </th>";
-                echo "<th>Delete? </th>";
-                echo "</tr>";
+                $players = $playerfac->getPlayers();
+                ?>
+                <table class='table table-responsive table-hover-me'>
+                <thead>
+                    <tr>
+                        <th>Player ID </th>
+                        <th>First Name </th>
+                        <th>Last Name</th>
+                        <th>Edit?</th>
+                        <th>Delete? </th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?
                 foreach ($players as $rows){
                     echo "<tr>";
                     echo "<td>" . $rows['id'] . "</td>";        
@@ -53,6 +58,7 @@
                 echo "</form>";
                 // print_r($players[0][playerfirst]);
         ?>
+        </tbody>
         </div>
     </body>
 </html>

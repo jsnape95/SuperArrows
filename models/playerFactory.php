@@ -49,14 +49,20 @@ class PlayerFactory {
         }
 
         //why is this needed???
-//    public function GetPlayers()
-//     {
-//     $allplayers = $this->getAllPlayers();
-//     // echo "<p>$players->player1First $players->player1Last vs $players->player2First $players->player2Last (6)</p>";
-//     // echo "test";
-//     // var_dump($allplayers);
-//     }
+        // needed to for adminplayer as the code isnt oo
+   public function getPlayers()
+   {
+    $players = $this->db->query("
+        select
+            id,
+            players.firstname as playerfirst,
+            players.lastname as playerlast
+            from players
+            ;");
 
+$results=$players->fetchAll();
+return $results;
+   }
     public function savePlayer() 
     {
         $stmt = $this->db->prepare("

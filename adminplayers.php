@@ -23,7 +23,7 @@
 
             <?php
                 $playerfac = new PlayerFactory($db);
-                $players = $playerfac->getPlayers();
+                $players = $playerfac->getAllPlayers();
                 echo "<table>";
                 echo "<tr>";
                 echo "<th>Player ID </th>";    

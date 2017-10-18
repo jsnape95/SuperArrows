@@ -1,4 +1,7 @@
-<?php require __DIR__."/includes/bundle.php"; ?>
+<?php 
+    require __DIR__."/includes/bundle.php"; 
+    session_start();
+?>
 
 <html>
     <head>
@@ -20,7 +23,7 @@
 
             <?php
                 $playerfac = new PlayerFactory($db);
-                $players = $playerfac->getPlayers();
+                $players = $playerfac->getAllPlayers();
                 echo "<table>";
                 echo "<tr>";
                 echo "<th>Player ID </th>";    

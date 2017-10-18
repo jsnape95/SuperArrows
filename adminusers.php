@@ -23,34 +23,41 @@ session_start();
             <?php
                 $userfac = new UserFactory($db);
                 $users = $userfac->getAllUsers();
-                echo "<table>";
-                echo "<tr>";
-                echo "<th>First Name </th>";
-                echo "<th>Last Name </th>";
-                echo "<th>Username</th>";
-                echo "<th>Email</th>";
-                echo "<th>AccType </th>";
-                echo "<th>Points </th>";
-                echo "<th>Registration Date</th>";
-                echo "<th>IP Address</th>";                
-                echo "<th>Change AccType </th>";
-                echo "<th>Delete? </th>";
-                echo "</tr>";
+            ?>
+            <table class='table table-responsive table-hover-me'>
+                <thead>
+                    <tr>
+                        <th>First Name </th>
+                        <th>Last Name </th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>AccType </th>
+                        <th>Points </th>
+                        <th>Registration Date</th>
+                        <th>IP Address</th>           
+                        <th>Change AccType </th>
+                        <th>Delete? </th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
                 foreach ($users as $rows){
                     echo "<tr>";
-                    echo "<td>" . $rows['FirstName'] . "</td>";        
-                    echo "<td>" . $rows['SecondName'] . "</td>";
-                    echo "<td>" . $rows['Username'] . "</td>";
-                    echo "<td>" . $rows['Email'] . "</td>";
-                    echo "<td>" . $rows['AccType'] . "</td>";
-                    echo "<td>" . $rows['Points'] . "</td>";
-                    echo "<td>" . $rows['RegisterDate'] . "</td>";
-                    echo "<td>" . $rows['IP'] . "</td>";
-                    echo "<td><a href=/logics/usertype.php?ID=".$rows["ID"].">Change AccType</a></td>";                    
-                    echo "<td><a href=/logics/removeuser.php?ID=".$rows["ID"].">Remove User</a></td>";
+                    echo    "<td>" . $rows['FirstName'] . "</td>";        
+                    echo    "<td>" . $rows['SecondName'] . "</td>";
+                    echo    "<td>" . $rows['Username'] . "</td>";
+                    echo    "<td>" . $rows['Email'] . "</td>";
+                    echo    "<td>" . $rows['AccType'] . "</td>";
+                    echo    "<td>" . $rows['Points'] . "</td>";
+                    echo    "<td>" . $rows['RegisterDate'] . "</td>";
+                    echo    "<td>" . $rows['IP'] . "</td>";
+                    echo    "<td><a href=/logics/usertype.php?ID=".$rows["ID"].">Change AccType</a></td>";                    
+                    echo    "<td><a href=/logics/removeuser.php?ID=".$rows["ID"].">Remove User</a></td>";
                     echo "</tr>";
                 }
-        ?>
+                ?>
+                </tbody>
+            </table>
         </div>
     </body>
 </html>

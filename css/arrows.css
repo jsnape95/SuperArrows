@@ -443,3 +443,7 @@ footer hr {
 #login-panel{
     float: right;
 }
+
+.table-hover-me > tbody > tr:hover{
+    background-color:#5697ff !important;
+}

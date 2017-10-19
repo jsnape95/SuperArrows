@@ -37,14 +37,14 @@ session_start();
 
 
                     if(count($q) == 0){
-                        echo "No matches scheduled";
+                        echo "<p class='text-bg'>No matches scheduled</p>";
                     } else {
-                        echo "<h1><u>Round $currentRound->id</u></h1>";
+                        echo "<h1 class='text-bg'><u>Round $currentRound->id</u></h1>";
 
                         if(count($preds) != 0) {
-                            echo "<p>Predictions for this round already submitted</p>";
+                            echo "<p class='text-bg'>Predictions for this round already submitted</p>";
                         } else {
-                            echo "<h3>Enter your predictions for this round.</h3>";
+                            echo "<h3 class='text-bg'>Enter your predictions for this round.</h3>";
                             echo "<br><br>";
                             echo " <form method='POST' action='results.php'>";
                                 foreach($q as $match) {

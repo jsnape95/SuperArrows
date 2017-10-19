@@ -15,7 +15,7 @@
                 <li><a href='generateResults.php'>View Results</a></li>
 
                 <div id="logoDiv" class="disp-in padb-10 fs-18">
-                    <a href="../index.php"><img src="../img/logo.jpg" alt="logo" class="center"></a>
+                    <a href="../index.php"><img src="../img/logo2.png" alt="logo" class="center"></a>
                 </div>
 
                 <?

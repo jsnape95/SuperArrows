@@ -191,7 +191,8 @@ $dateAndTime = date('Y-m-d H:i:s');
     <link rel="stylesheet" type="text/css" href="css/arrows.css"/>
 </head>
 </html>
-
+<div class='container'>
+            <div align='center'>
 <form action="registerform.php" method="post">
     <br>
     <br>
@@ -212,3 +213,5 @@ $dateAndTime = date('Y-m-d H:i:s');
     <br /><br />
     <input type="submit" value="Register" class="cl-black"/>
 </form>
+</div>
+</div>

@@ -3,6 +3,7 @@ session_start();
 ?>
 <html>
 <div id="login">
+<div class="logout">
 <p>
 <?php 
 if (isset($_SESSION['user']))
@@ -16,5 +17,6 @@ if(isset($_SESSION['admin']))
 }
 ?>
 </p>
+</div>
 </div>
 </html>

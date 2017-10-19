@@ -4,8 +4,9 @@ body {
     width: 100% !important;
     font-family: 'Arial';
     font-size: 20px;
-    background-image: url('../img/dartspic3.gif');
+    background-image: url('../img/darts10.png');
     background-repeat: no-repeat;
+    background-size: cover;
     background-attachment: fixed;
     color: white;
 }
@@ -126,7 +127,9 @@ body {
     margin: 10px;
 }
 
-.mart-0 {
+.    color: #fff;
+outline: none;
+text-decoration: none;-0 {
     margin-top: 0px;
 }
 
@@ -347,11 +350,13 @@ body {
 #navHeader {
     outline: none;
     width: 100%;
-    height: auto;
+    height: 135px;
     color: #fff;
-    background: #122d68 20%;
+    /* background: #122d68 20%; */
     position: static;
-    box-shadow: 0px 10px 30px #FAB066;
+    box-shadow: 0px 10px 30px #000;
+    background: linear-gradient(#000, rgb(43, 43, 43));
+    /* opacity:0.9; */
 
 }
 #navHeader [type=text] {
@@ -394,9 +399,11 @@ body {
     right: 360px;
     top:110px;
 }
-/* li:hover [href] {
-    background-color: #FAB066;
-} */
+li:hover [href] {
+    border: 1px solid black;    
+    outline: #000;
+    
+    }
 .logout {
     /* width: 150px; */
     height:20px;

@@ -5,22 +5,15 @@ body {
     font-family: 'Arial';
     font-size: 20px;
     background-image: url('../img/dartspic3.gif');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     color: white;
+    text-shadow: 1px 1px 6px #000;
+    font-weight: bold;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+
+
 }
 
-.text-bg{
-    text-shadow: 1px 1px 6px #000 !important;
-    font-weight: bold !important;
-    -webkit-text-stroke-width: 1px !important;
-    -webkit-text-stroke-color: black !important;
-}
-
-.text-norm > .panel > .panel-body{
-    font-family: 'Arial' !important;
-    font-size: 20px !important;
-}
 .loginform {
     width: 375px;
     height: 25px;
@@ -354,62 +347,28 @@ body {
     box-shadow: 0px 10px 30px #FAB066;
 
 }
-#navHeader [type=text] {
-    width: 150px;
-    height: 5px;
+#navHeader [type=text], [type=password] {
+    width: 100px;
+    height:20px;
     font-size:12px;
     color: #000;
-    padding: 10px 5px; 
+    /* padding: 14px 16px;     */
+    /* height: auto; */
     position: absolute;
-    right:260px;
-    top:80px;  
-}
-#navHeader [type=password] {
-    width: 150px;
-    height: 5px;
-    font-size:12px;
-    color: #000;
-    padding: 10px 5px; 
-    position: absolute;
-    right: 100px;
-    top:80px;
-}
-#navHeader [type=submit] {
-    /* width: 150px; */
-    color: #000;
-    height:20px;
-    font-size: 12px;
-    list-style-type: none;
-    position: absolute;
-    right: 40px;
-    top:80px;
-}
-#navHeader [type=reg] {
-    /* width: 150px; */
-    color: #fff;
-    height:20px;
-    font-size: 12px;
-    list-style-type: none;
-    position: absolute;
-    right: 360px;
-    top:110px;
-}
-/* li:hover [href] {
-    background-color: #FAB066;
-} */
-.logout {
-    /* width: 150px; */
-    height:20px;
-    font-size: 18px;
-    list-style-type: none;
-    position: absolute;
-    right: 50px;
-    top:80px;
-    color: #fff;
-    outline: none;
-    text-decoration: none;
-}
+    white-space:nowrap;
 
+}
+li:hover [href] {
+    background-color: #FAB066;
+}
+#navHeader [type=submit], [type=reg] {
+    /* width: 150px; */
+    color: #000;
+    height:20px;
+    font-size: 12px;
+    display: inline-block;
+    list-style-type: none;
+}
 
 #logoDiv {
     width: 230px;
@@ -420,13 +379,14 @@ body {
 }
 
 #logoDiv img {
-    height: 150px;
+    height: 115px;
     width: 150px;
+        box-shadow: 0px 10px 30px #449d44;
+
 }
 
 #navList {
     font-size: 18px;
-    text-align: center;
 
 }
 
@@ -545,5 +505,3 @@ input[type="number"].mod::-webkit-inner-spin-button:active{
     opacity: .8;
 }
 /* NUMBER SPINNER END */
-
-

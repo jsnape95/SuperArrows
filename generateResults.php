@@ -18,8 +18,8 @@ session_start();
         <?php include_once('includes/navBar.inc.php'); ?>
         <div class='container'>
             <div align='center'>
-                <h1>Results</h1>
-                <p>Please select a round to view your results.</p>
+                <h1 class="text-bg">Results</h1>
+                <p class="text-bg">Please select a round to view your results.</p>
 
                 <?php
                     $rf = new RoundFactory($db);
@@ -42,25 +42,29 @@ session_start();
                     <div class='row'>
                         <div class='col-md-4 col-md-offset-2'>
                             <div class='panel panel-default'>
-                                <div class="panel-heading" id="match_0"></div>
-                                <div class="panel-body">
-                                    <p class='cl-black'>Your prediction</p>
+                                <div class="panel-heading text-norm">
+                                    <h5 id="match_0"></h5>
+                                </div>
+                                <div class="panel-body ">
+                                    <h5 class='cl-black text-norm'>Your prediction</h5>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player1pred_0" readonly/>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player2pred_0" readonly/>
-                                    <p class='cl-black'>Result</p>
+                                    <h5 class='cl-black'>Result</h5>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player1res_0" readonly/>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player2res_0" readonly/> 
                                 </div>
                             </div>
                         </div>
-                        <div class='col-md-4 '>
+                        <div class='col-md-4'>
                             <div class='panel panel-default'>
-                                <div class="panel-heading" id="match_1"></div>
+                                <div class="panel-heading text-norm">
+                                    <h5 id="match_1"></h5>
+                                </div>
                                 <div class="panel-body">
-                                    <p class='cl-black'>Your prediction</p>
+                                    <h5 class='cl-black text-norm'>Your prediction</h5>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player1pred_1" readonly/>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player2pred_1" readonly/>
-                                    <p class='cl-black'>Result</p>
+                                    <h5 class='cl-black'>Result</h5>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player1res_1" readonly/>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player2res_1" readonly/> 
                                 </div>
@@ -71,12 +75,14 @@ session_start();
                     <div class='row'>
                         <div class='col-md-4 col-md-offset-2'>
                             <div class='panel panel-default'>
-                                <div class="panel-heading" id="match_2"></div>
+                                <div class="panel-heading text-norm">
+                                    <h5 id="match_2"></h5>
+                                </div>
                                 <div class="panel-body">
-                                    <p class='cl-black'>Your prediction</p>
+                                    <h5 class='cl-black text-norm'>Your prediction</h5>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player1pred_2" readonly/>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player2pred_2" readonly/>
-                                    <p class='cl-black'>Result</p>
+                                    <h5 class='cl-black'>Result</h5>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player1res_2" readonly/>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player2res_2" readonly/>
                                 </div>
@@ -84,12 +90,14 @@ session_start();
                         </div>
                         <div class='col-md-4 '>
                             <div class='panel panel-default'>
-                                <div class="panel-heading" id="match_3"></div>
+                                <div class="panel-heading text-norm">
+                                    <h5 id="match_3"></h5>
+                                </div>
                                 <div class="panel-body">
-                                    <p class='cl-black'>Your prediction</p>
+                                    <h5 class='cl-black text-norm'>Your prediction</h5>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player1pred_3" readonly/>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player2pred_3" readonly/>
-                                    <p class='cl-black'>Result</p>
+                                    <h5 class='cl-black'>Result</h5>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player1res_3" readonly/>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player2res_3" readonly/>
                                 </div>
@@ -100,12 +108,14 @@ session_start();
                     <div class='row'>
                         <div class='col-md-4 col-md-offset-2'>
                             <div class='panel panel-default'>
-                                <div class="panel-heading" id="match_4"></div>
+                                <div class="panel-heading text-norm">
+                                    <h5 id="match_4"></h5>
+                                </div>
                                 <div class="panel-body">
-                                    <p class='cl-black'>Your prediction</p>
+                                    <h5 class='cl-black text-norm'>Your prediction</h5>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player1pred_4" readonly/>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player2pred_4" readonly/>
-                                    <p class='cl-black'>Result</p>
+                                    <h5 class='cl-black'>Result</h5>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player1res_4" readonly/>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player2res_4" readonly/>
                                 </div>
@@ -113,12 +123,14 @@ session_start();
                         </div>
                         <div class='col-md-4 '>
                             <div class='panel panel-default'>
-                                <div class="panel-heading" id="match_5"></div>
+                                <div class="panel-heading text-norm">
+                                    <h5 id="match_5"></h5>
+                                </div>
                                 <div class="panel-body">
-                                    <p class='cl-black'>Your prediction</p>
+                                    <h5 class='cl-black text-norm'>Your prediction</h5>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player1pred_5" readonly/>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player2pred_5" readonly/>
-                                    <p class='cl-black'>Result</p>
+                                    <h5 class='cl-black'>Result</h5>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player1res_5" readonly/>
                                     <input class="result-box cl-black" type="text" value="1" max="9" id="player2res_5" readonly/>
                                 </div>

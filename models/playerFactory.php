@@ -46,17 +46,8 @@ class PlayerFactory {
             array_push($playerArray, $p);
         }
         return $playerArray;
-        }
-
-        //why is this needed???
-//    public function GetPlayers()
-//     {
-//     $allplayers = $this->getAllPlayers();
-//     // echo "<p>$players->player1First $players->player1Last vs $players->player2First $players->player2Last (6)</p>";
-//     // echo "test";
-//     // var_dump($allplayers);
-//     }
-
+    }
+    
     public function savePlayer() 
     {
         $stmt = $this->db->prepare("

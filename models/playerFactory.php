@@ -46,23 +46,8 @@ class PlayerFactory {
             array_push($playerArray, $p);
         }
         return $playerArray;
-        }
-
-        //why is this needed???
-        // needed to for adminplayer as the code isnt oo
-   public function getPlayers()
-   {
-    $players = $this->db->query("
-        select
-            id,
-            players.firstname as playerfirst,
-            players.lastname as playerlast
-            from players
-            ;");
-
-$results=$players->fetchAll();
-return $results;
-   }
+    }
+    
     public function savePlayer() 
     {
         $stmt = $this->db->prepare("

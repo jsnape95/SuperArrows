@@ -68,8 +68,13 @@ session_start();
                 ?>
             </div>
         </div>
-        <?php require __DIR__."/includes/scripts.php"; ?>
+        <!-- <?php require __DIR__."/includes/scripts.php"; ?>
         <script>
-        </script>
+        $(document).ready(function(){
+          $('#test').click(function(){
+            bootbox.alert("Hello world!");
+          });
+        })
+        </script> -->
     </body>
 </html>

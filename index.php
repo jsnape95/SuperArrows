@@ -1,4 +1,4 @@
-<?php require __DIR__."/includes/bundle.php"; 
+<?php require __DIR__."/includes/bundle.php";
 session_start();
 ?>
 
@@ -26,7 +26,7 @@ session_start();
 
                     $mf = new MatchFactory($db);
                     $q = $mf->getRoundMatches($currentRound->id);
-                    
+
                     $matches = serialize($q);
 
                     $uf = new UserFactory($db);
@@ -44,7 +44,7 @@ session_start();
                         if(count($preds) != 0) {
                             echo "<p>Predictions for this round already submitted</p>";
                         } else {
-                            echo "<h3>Enter your predicitons for this round.</h3>";
+                            echo "<h3>Enter your predictions for this round.</h3>";
                             echo "<br><br>";
                             echo " <form method='POST' action='results.php'>";
                                 foreach($q as $match) {
@@ -70,6 +70,6 @@ session_start();
         </div>
         <?php require __DIR__."/includes/scripts.php"; ?>
         <script>
-        </script> 
+        </script>
     </body>
 </html>

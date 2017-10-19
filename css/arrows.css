@@ -3,10 +3,17 @@ body {
     height: 100% !important;
     width: 100% !important;
     font-family: 'Arial';
-    font-size: 1em;
-    background-color: #122D7C;
+    font-size: 20px;
+    background-image: url('../img/dartspic3.gif');
     color: white;
+    text-shadow: 1px 1px 6px #000;
+    font-weight: bold;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+
+
 }
+
 .loginform {
     width: 375px;
     height: 25px;
@@ -169,7 +176,7 @@ body {
 }
 
 .marl-25p {
-    margin-left: 25%;
+    margin-left: 8%;
 }
 
 .marr-25p {
@@ -338,7 +345,7 @@ body {
     background: #122d68 20%;
     position: static;
     box-shadow: 0px 10px 30px #FAB066;
-    
+
 }
 #navHeader [type=text], [type=password] {
     width: 100px;
@@ -348,7 +355,7 @@ body {
     /* height: auto; */
     position: absolute;
     white-space:nowrap;
-    
+
 }
 li:hover [href] {
     background-color: #FAB066;
@@ -375,7 +382,7 @@ li:hover [href] {
 
 #navList {
     font-size: 18px;
-    
+
 }
 
 #navList a {
@@ -389,7 +396,7 @@ li:hover [href] {
     padding-right: 20px;
     width:200px;
 }
-/* 
+/*
 #navList li:hover {
     transform: scale(1.2) perspective(1px); */
 }

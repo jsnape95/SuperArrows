@@ -5,6 +5,7 @@ body {
     font-family: 'Arial';
     font-size: 20px;
     background-image: url('../img/darts10.png');
+    background-size: cover;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -508,9 +509,9 @@ footer hr {
 }
 
 input[type="text"].result-box {
-    height: 50px;
-    width: 70px;
-    font-size: 30;
+    height: 40px;
+    width: 60px;
+    font-size: 20;
     text-align: center;
     position: relative;
     margin: 0 0 1rem;
@@ -552,5 +553,3 @@ input[type="number"].mod::-webkit-inner-spin-button:active{
     opacity: .8;
 }
 /* NUMBER SPINNER END */
-
-

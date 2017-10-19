@@ -3,11 +3,21 @@ body {
     height: 100% !important;
     width: 100% !important;
     font-family: 'Arial';
-    font-size: 1em;
-    background-color: #122D7C;
-    color: black;
+    font-size: 20px;
+    background-image: url('../img/dartspic3.gif');
+    color: white;
+    text-shadow: 1px 1px 6px #000;
+    font-weight: bold;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+
+
 }
 
+.loginform {
+    width: 375px;
+    height: 25px;
+  }
 .h-34 {
     height: 34px;
 }
@@ -166,7 +176,7 @@ body {
 }
 
 .marl-25p {
-    margin-left: 25%;
+    margin-left: 8%;
 }
 
 .marr-25p {
@@ -334,6 +344,27 @@ body {
     color: #fff;
     background: #122d68 20%;
     position: static;
+    box-shadow: 0px 10px 30px #FAB066;
+
+}
+#navHeader [type=text], [type=password] {
+    width: 100px;
+    height:20px;
+    font-size:12px;
+    color: #000;
+    /* height: auto; */
+    position: absolute;
+    white-space:nowrap;
+
+}
+li:hover [href] {
+    background-color: #FAB066;
+}
+#navHeader [type=submit] {
+    /* width: 150px; */
+    color: #000;
+    height:20px;
+    font-size: 12px;
 }
 
 #logoDiv {
@@ -344,11 +375,14 @@ body {
 
 #logoDiv img {
     height: 115px;
-    width: 230px;
+    width: 150px;
+        box-shadow: 0px 10px 30px #449d44;
+
 }
 
 #navList {
     font-size: 18px;
+
 }
 
 #navList a {
@@ -358,11 +392,13 @@ body {
 }
 
 #navList li {
+    float:left;
     padding-right: 20px;
+    width:200px;
 }
-
+/*
 #navList li:hover {
-    transform: scale(1.2) perspective(1px);
+    transform: scale(1.2) perspective(1px); */
 }
 
 #navList li a:focus {
@@ -409,4 +445,8 @@ footer hr {
 
 .black-input{
     color: #000;
+}
+
+#login-panel{
+    float: right;
 }

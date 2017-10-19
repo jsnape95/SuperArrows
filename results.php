@@ -1,7 +1,7 @@
 <?php 
 
 require __DIR__."/includes/bundle.php";
-
+session_start();
 ?>
 
 <html>
@@ -23,10 +23,14 @@ require __DIR__."/includes/bundle.php";
                 $pf = new PredictionFactory($db);
                 $matches = unserialize($_POST['matches']);
 
+                $uf = new UserFactory($db);
+                $user = $uf->getCurrentUser();
+
                 $predictionObjs = $pf->fromPostArrays(
                     $_POST['player1score'],
                     $_POST['player2score'],
-                    $matches
+                    $matches,
+                    $user->id
                 );
 
                 foreach($predictionObjs as $p) {

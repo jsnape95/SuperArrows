@@ -1,4 +1,6 @@
-<?php require __DIR__."/includes/bundle.php"; ?>
+<?php require __DIR__."/includes/bundle.php";
+session_start();
+?>
 
 <html>
     <head>
@@ -24,11 +26,14 @@
 
                     $mf = new MatchFactory($db);
                     $q = $mf->getRoundMatches($currentRound->id);
-                    
+
                     $matches = serialize($q);
 
+                    $uf = new UserFactory($db);
+                    $currentUser = $uf->getCurrentUser();
+
                     $pf = new PredictionFactory($db);
-                    $preds = $pf->getRoundPredictions($currentRound->id);
+                    $preds = $pf->getRoundPredictions($currentRound->id, $currentUser->id);
 
 
                     if(count($q) == 0){
@@ -39,7 +44,7 @@
                         if(count($preds) != 0) {
                             echo "<p>Predictions for this round already submitted</p>";
                         } else {
-                            echo "<h3>Enter your predicitons for this round.</h3>";
+                            echo "<h3>Enter your predictions for this round.</h3>";
                             echo "<br><br>";
                             echo " <form method='POST' action='results.php'>";
                                 foreach($q as $match) {
@@ -51,7 +56,12 @@
                                 echo "<p>Golden 180's</p>";
                                 echo "<input class='black-input' type='number' name='golden180' min='0'/>";
                                 echo "<br/><br/>";
-                                echo "<input type='submit' class='btn btn-success'/>";
+
+                                if(empty($_SESSION)) {
+                                    echo "<p>You must be logged in to be able to make a prediction.</p>";
+                                } else {
+                                    echo "<input type='submit' class='btn btn-success'/>";
+                                }
                             echo "</form>";
                         }
                     }
@@ -60,6 +70,6 @@
         </div>
         <?php require __DIR__."/includes/scripts.php"; ?>
         <script>
-        </script> 
+        </script>
     </body>
 </html>

@@ -81,9 +81,9 @@
 
           for(var x=0; x< json.length; x++){
 
-            var i = $('<input>').attr({'type':'number', 'name':'player2score[]', 'min': 0});
+              var i = $('<input>').attr({'type':'number', 'name':'player2score[]', 'min': 0});
 
-}
+          }
 
         }
       });

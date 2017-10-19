@@ -24,35 +24,40 @@
             <?php
                 $playerfac = new PlayerFactory($db);
                 $players = $playerfac->getAllPlayers();
-                echo "<table>";
-                echo "<tr>";
-                echo "<th>Player ID </th>";    
-                echo "<th>First Name </th>";
-                echo "<th>Last Name </th>";
-                echo "<th>Edit? </th>";
-                echo "<th>Delete? </th>";
-                echo "</tr>";
-                foreach ($players as $rows){
-                    echo "<tr>";
-                    echo "<td>" . $rows['id'] . "</td>";        
-                    echo "<td>" . $rows['playerfirst'] . "</td>";
-                    echo "<td>" . $rows['playerlast'] . "</td>";
-                    echo "<td><a href=/logics/updateplayer.php?id=".$rows["id"].">Edit Player</a></td>";
-                    echo "<td><a href=/logics/removelogic.php?id=".$rows["id"].">Remove Player</a></td>";
-                    echo "</tr>";
-                }
-                echo "</table>";    
-                echo "<form method='POST' action='playerinsert.php'>";
-                    echo "Fill in the below fields to add a player</br>";
-                    echo "First Name";
-                    echo "<input type='text' name='insertfirstname'/>";
-                    echo "Last Name";
-                    echo "<input type='text' name='insertlastname'/>";
-                    echo "<br/><br/>";
-                    echo "<input type='submit'/>";
-                echo "</form>";
-                // print_r($players[0][playerfirst]);
-        ?>
+            ?>
+            <form method='POST' action='playerinsert.php'>
+                <table class="table table-responsive table-hover-me">
+                    <thead>
+                        <tr>
+                            <th>Player ID </th>   
+                            <th>First Name </th>
+                            <th>Last Name </th>
+                            <th>Edit? </th>
+                            <th>Delete? </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                        foreach ($players as $player){
+                            echo "<tr>";
+                            echo "<td>" . $player->id . "</td>";        
+                            echo "<td>" . $player->firstname . "</td>";
+                            echo "<td>" . $player->lastname . "</td>";
+                            echo "<td><a href=/logics/updateplayer.php?id=".$player->id.">Edit Player</a></td>";
+                            echo "<td><a href=/logics/removelogic.php?id=".$player->id.">Remove Player</a></td>";
+                            echo "</tr>";
+                        }
+                    ?>
+                    </tbody>
+                </table> 
+                <p>Fill in the below fields to add a player</p>
+                <label>First Name</label>
+                <input type='text' name='insertfirstname' class='cl-black'/>
+                <label>Last Name</label>
+                <input type='text' name='insertlastname' class='cl-black'/>
+                <br/><br/>
+                <input type='submit' class='cl-black'/>
+            </form>
         </div>
     </body>
 </html>

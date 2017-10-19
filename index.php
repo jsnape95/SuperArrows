@@ -1,5 +1,5 @@
 <?php require __DIR__."/includes/bundle.php";
-session_start();
+    session_start();
 ?>
 
 <html>
@@ -12,14 +12,15 @@ session_start();
         <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/fontAwesome/css/font-awesome.min.css"/>
         <link rel="stylesheet" type="text/css" href="css/arrows.css"/>
+        <link rel="icon" href="img/logo2.ico" type="image/x-icon">
     </head>
     <body>
         <?php include_once('includes/productHeader.inc.php'); ?>
         <?php include_once('includes/navBar.inc.php'); ?>
         <div class='container'>
             <div align='center'>
-                <?php
 
+                <?php
                     $rf = new RoundFactory($db);
                     $currentRound = $rf->getCurrentRound();
                     echo $currentRound->idin;
@@ -35,33 +36,69 @@ session_start();
                     $pf = new PredictionFactory($db);
                     $preds = $pf->getRoundPredictions($currentRound->id, $currentUser->id);
 
-
+                    echo "<div class'row'>";
+                    echo    "<div class'col-md-12'>";
                     if(count($q) == 0){
                         echo "<p class='text-bg'>No matches scheduled</p>";
+                        echo "</div></div>";
                     } else {
                         echo "<h1 class='text-bg'><u>Round $currentRound->id</u></h1>";
 
                         if(count($preds) != 0) {
                             echo "<p class='text-bg'>Predictions for this round already submitted</p>";
+                            echo "</div></div>";
                         } else {
                             echo "<h3 class='text-bg'>Enter your predictions for this round.</h3>";
+                            echo "</div></div>";
                             echo "<br><br>";
                             echo " <form method='POST' action='results.php'>";
-                                foreach($q as $match) {
-                                    echo "<p>$match->player1First $match->player1Last vs $match->player2First $match->player2Last (6)</p>";
-                                    echo "<input class='mod cl-black' type='number' name='player1score[]' min='0' max='6'/> ";
-                                    echo "<input class='mod cl-black' type='number' name='player2score[]' min='0' max='6'/>";
-                                    echo "<input type='hidden' name='matches' value='".$matches."'/>";
+                                foreach($q as $val=>$match) {
+                                    $div = "";
+                                    $closeDiv = "";
+                                    if($val % 2 === 0){
+                                        $div = "<div class='row'><div class='col-md-4 col-md-offset-2'>";
+                                    } else {
+                                        $div = "<div class='col-md-4'>";
+                                        $closeDiv = "</div>";
+                                    }
+                                    echo    $div;
+                                    echo        "<div class='panel panel-default'>";
+                                    echo            "<div class='panel-heading text-norm' id='match_0'>";
+                                    echo                "<h5>$match->player1First $match->player1Last vs $match->player2First $match->player2Last (6)</h5>";
+                                    echo            "</div>";
+                                    echo            "<div class='panel-body'>";
+                                    echo                "<input class='mod cl-black' type='number' name='player1score[]' min='0' max='6'/> ";
+                                    echo                "<input class='mod cl-black' type='number' name='player2score[]' min='0' max='6'/>";
+                                    echo                "<input type='hidden' name='matches' value='".$matches."'/>";
+                                    echo            "</div>";
+                                    echo        "</div>";
+                                    echo    "</div>";
+                                    echo $closeDiv;
                                 }
-                                echo "<p>Golden 180's</p>";
-                                echo "<input class='mod cl-black' type='number' name='golden180' min='0'/>";
-                                echo "<br/><br/>";
-
+                                
+                                echo "<div class='row'>";
+                                echo    "<div class='col-md-4 col-md-offset-4'>";
+                                echo        "<div class='panel panel-default'>";
+                                echo            "<div class='panel-heading'>";
+                                echo                "<h5>Golden 180's</h5>";
+                                echo            "</div>";
+                                echo            "<div class='panel-body cl-black'>";
+                                echo                "<h5>Guess the correct amount of 180's in any match</h5>";
+                                echo                "<input class='mod cl-black' type='number' name='golden180' min='0'/>";
+                                echo            "</div>";
+                                echo        "</div>";
+                                echo    "</div>";
+                                echo "</div>";
+                                
+                                echo "<div class='row'>";
+                                echo "<div class='col-md-12'>";
                                 if(empty($_SESSION)) {
                                     echo "<p class='text-danger'>You must be logged in to be able to make a prediction.</p>";
                                 } else {
                                     echo "<input type='submit' class='btn btn-success'/>";
                                 }
+                                echo "</div>";
+                                echo "</div>";
                             echo "</form>";
                         }
                     }

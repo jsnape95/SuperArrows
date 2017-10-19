@@ -4,7 +4,8 @@ body {
     width: 100% !important;
     font-family: 'Arial';
     font-size: 20px;
-    background-image: url('../img/dartspic3.gif');
+    background-image: url('../img/darts10.png');
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: white;
@@ -351,7 +352,7 @@ body {
     color: #fff;
     background: #122d68 20%;
     position: static;
-    box-shadow: 0px 10px 30px #FAB066;
+    box-shadow: 0px 10px 30px #000;
 
 }
 #navHeader [type=text], [type=password] {
@@ -461,9 +462,9 @@ footer hr {
 }
 
 input[type="text"].result-box {
-    height: 50px;
-    width: 70px;
-    font-size: 30;
+    height: 40px;
+    width: 60px;
+    font-size: 20;
     text-align: center;
     position: relative;
     margin: 0 0 1rem;
@@ -505,3 +506,4 @@ input[type="number"].mod::-webkit-inner-spin-button:active{
     opacity: .8;
 }
 /* NUMBER SPINNER END */
+

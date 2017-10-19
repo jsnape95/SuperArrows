@@ -35,12 +35,10 @@ class PlayerFactory {
         ;");
 
         $results=$players->fetchAll();
-        return $results;
-        //loop through $p
         //create a new player and add to array
         $playerArray=[];
 
-        foreach($players as $player){
+        foreach($results as $player){
             $p = new Player();
             $p->id=$player['id'];
             $p->firstname=$player['playerfirst'];
@@ -48,15 +46,8 @@ class PlayerFactory {
             array_push($playerArray, $p);
         }
         return $playerArray;
-        }
-   public function GetPlayers()
-    {
-    $allplayers = $this->getAllPlayers();
-    // echo "<p>$players->player1First $players->player1Last vs $players->player2First $players->player2Last (6)</p>";
-    // echo "test";
-    // var_dump($allplayers);
     }
-
+    
     public function savePlayer() 
     {
         $stmt = $this->db->prepare("

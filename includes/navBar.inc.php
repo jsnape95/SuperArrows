@@ -19,6 +19,9 @@
                 </div>
 
                 <?
+    if(isset($_GET['failed'])){
+         echo "Login has failed!";
+    }
     if (isset($_SESSION['user']))
     {
         include "includes/logoutbutton.php";

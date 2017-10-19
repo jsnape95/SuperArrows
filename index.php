@@ -49,16 +49,16 @@ session_start();
                             echo " <form method='POST' action='results.php'>";
                                 foreach($q as $match) {
                                     echo "<p>$match->player1First $match->player1Last vs $match->player2First $match->player2Last (6)</p>";
-                                    echo "<input class='black-input' type='number' name='player1score[]' min='0'/>";
-                                    echo "<input class='black-input' type='number' name='player2score[]' min='0'/>";
+                                    echo "<input class='mod cl-black' type='number' name='player1score[]' min='0' max='6'/> ";
+                                    echo "<input class='mod cl-black' type='number' name='player2score[]' min='0' max='6'/>";
                                     echo "<input type='hidden' name='matches' value='".$matches."'/>";
                                 }
                                 echo "<p>Golden 180's</p>";
-                                echo "<input class='black-input' type='number' name='golden180' min='0'/>";
+                                echo "<input class='mod cl-black' type='number' name='golden180' min='0'/>";
                                 echo "<br/><br/>";
 
                                 if(empty($_SESSION)) {
-                                    echo "<p>You must be logged in to be able to make a prediction.</p>";
+                                    echo "<p class='text-danger'>You must be logged in to be able to make a prediction.</p>";
                                 } else {
                                     echo "<input type='submit' class='btn btn-success'/>";
                                 }

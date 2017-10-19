@@ -1,5 +1,6 @@
 <?php
-require __DIR__."/includes/bundle.php";
+  require __DIR__."/includes/bundle.php";
+  session_start();
 ?>
 <html>
 <head>
@@ -80,9 +81,9 @@ require __DIR__."/includes/bundle.php";
 
           for(var x=0; x< json.length; x++){
 
-            var i = $('<input>').attr({'type':'number', 'name':'player2score[]', 'min': 0});
+              var i = $('<input>').attr({'type':'number', 'name':'player2score[]', 'min': 0});
 
-}
+          }
 
         }
       });

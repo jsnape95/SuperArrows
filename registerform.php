@@ -5,6 +5,30 @@ include('includes/navBar.inc.php');
 
 $c = new Connection();
 $db = $c->getDb();
+function get_client_ip_server() {
+    $ipaddress = '';
+    if ($_SERVER['HTTP_CLIENT_IP'])
+        $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+    else if($_SERVER['HTTP_X_FORWARDED_FOR'])
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    else if($_SERVER['HTTP_X_FORWARDED'])
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+    else if($_SERVER['HTTP_FORWARDED_FOR'])
+        $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+    else if($_SERVER['HTTP_FORWARDED'])
+        $ipaddress = $_SERVER['HTTP_FORWARDED'];
+    else if($_SERVER['REMOTE_ADDR'])
+        $ipaddress = $_SERVER['REMOTE_ADDR'];
+    else
+        $ipaddress = 'UNKNOWN';
+  
+    return $ipaddress;
+  }
+
+date_default_timezone_set('Europe/London');
+$ipAddress = get_client_ip_server();
+$dateAndTime = date('Y-m-d H:i:s');
+
 //checks whether the form has been submitted if not shows the form
     if(!empty($_POST))
     {
@@ -97,7 +121,9 @@ $db = $c->getDb();
                 password,
                 acctype,
                 salt,
-                email
+                email,
+                RegisterDate,
+                IP
             ) VALUES (
                 :firstname,
                 :secondname,
@@ -105,7 +131,9 @@ $db = $c->getDb();
                 :password,
                 :acctype,
                 :salt,
-                :email)";
+                :email,
+                :todaydate,
+                :userip)";
         //salts used to protect against brute force attacks
         //this produces and 8 byte salt
         $salt = dechex(mt_rand(0, 2147483647)) . dechex(mt_rand(0, 2147483647));
@@ -127,9 +155,11 @@ $db = $c->getDb();
             'password' => $password,
             'acctype' => "U",
             'salt' => $salt,
-            'email' => $_POST['email']);
+            'email' => $_POST['email'],
+            'todaydate' => $dateAndTime,
+            'userip' => $ipAddress
+        );
         // try command to insert the user into the database
-        // var_dump($query_params);
         try
         {
             $state1 = $db->prepare($query);

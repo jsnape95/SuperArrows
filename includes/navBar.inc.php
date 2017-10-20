@@ -101,7 +101,7 @@ include ('includes/scripts.php');
 
                 <li><a href='generateResults.php'>View Results</a></li>
 
-
+<?
                 
             if(isset($_GET['failed'])){
                 echo "Login has failed!";

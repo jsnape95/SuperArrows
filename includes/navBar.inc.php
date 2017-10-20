@@ -16,13 +16,11 @@ include ('includes/scripts.php');
                     if(isset($_SESSION['admin'])) {
                         echo "<li><a href='logics/authorize.php'>Admin Page</a></li>";
                     }
-                    echo "<li><a href='generateResults.php'>View Results</a></li>";
-                }
-                if(isset($_GET['failed'])){
-                    echo "Login has failed!";
                 }
                 if (isset($_SESSION['user'])){
                     include "includes/logoutbutton.php";
+                    echo "<li><a href='generateResults.php'>View Results</a></li>";
+                    
                 }
                 if(isset($_SESSION['admin'])){
                     include "includes/logoutbutton.php";
@@ -30,10 +28,15 @@ include ('includes/scripts.php');
                 if(empty($_SESSION)){
                     include "includes/login.php";
                 }
-        
-
             ?>
-
+            </div>
+            <div id="failed">
+<?
+            if(isset($_GET['failed'])){
+                    echo "Login has failed!";
+                }
+                ?>
+            </div>
                 <!-- <li><a href='registerbootbox.php'>Register</a></li> -->
 
                 <!-- <button type="button" class="btn btn-info btn-lg" id="test" data-toggle="modal" data-target="#myModal">Register</button>

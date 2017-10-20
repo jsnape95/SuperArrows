@@ -93,7 +93,7 @@
                                 echo "<div class='row'>";
                                 echo "<div class='col-md-12'>";
                                 if(empty($_SESSION)) {
-                                    echo "<p class='text-danger'>You must be logged in to be able to make a prediction.</p>";
+                                    echo "<p class='text-danger text-bg'>You must be logged in to be able to make a prediction.</p>";
                                 } else {
                                     echo "<input type='submit' class='btn btn-success'/>";
                                 }

@@ -10,13 +10,17 @@
             <?
                 if(isset($_SESSION['admin']))
                 {
+                    // include 'hovernav.php';
                     echo "<li><a href='logics/authorize.php'>Admin Page</a></li>";
                 }
-            ?>
-                <li><a href='generateResults.php'>View Results</a></li>
+                if(!empty($_SESSION))
+                {
+                    echo "<li><a href='generateResults.php'>View Results</a></li>";
+                }
+        
 
 
-                <?
+                
             if(isset($_GET['failed'])){
                 echo "Login has failed!";
             }
@@ -32,6 +36,8 @@
             {
                         include "includes/login.php";
             }
+
+            
                 ?>
             </ul>
         </div>

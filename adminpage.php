@@ -16,10 +16,10 @@
     <div class='container'>
         <h1>Welcome Admin</h1>
         
-        <a href='/adminmatches.php'>Matches</a>
-        <a href='/adminresult.php'>Results</a>
-        <a href='/adminplayers.php'>Players</a>
-        <a href='/adminusers.php'>Users</a>
+        <a href='/adminmatches.php' class="cl-black" >Matches</a>
+        <a href='/adminresult.php'class="cl-black" >Results</a>
+        <a href='/adminplayers.php'class="cl-black">Players</a>
+        <a href='/adminusers.php'class="cl-black">Users</a>
 
     
     </div>

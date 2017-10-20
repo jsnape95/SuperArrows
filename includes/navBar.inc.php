@@ -12,15 +12,23 @@ include ('includes/scripts.php');
         <div class="disp-block" style="margin-top:6%; margin-left:15%">
         <ul id="navList" class="list-inline">
             <?
-                if(isset($_SESSION['admin']))
-                {
-                    // include 'hovernav.php';
-                    echo "<li><a href='logics/authorize.php'>Admin Page</a></li>";
-                }
-
-                if(!empty($_SESSION))
-                {
+                if(!empty($_SESSION)){  
+                    if(isset($_SESSION['admin'])) {
+                        echo "<li><a href='logics/authorize.php'>Admin Page</a></li>";
+                    }
                     echo "<li><a href='generateResults.php'>View Results</a></li>";
+                }
+                if(isset($_GET['failed'])){
+                    echo "Login has failed!";
+                }
+                if (isset($_SESSION['user'])){
+                    include "includes/logoutbutton.php";
+                }
+                if(isset($_SESSION['admin'])){
+                    include "includes/logoutbutton.php";
+                }
+                if(empty($_SESSION)){
+                    include "includes/login.php";
                 }
         
 
@@ -28,14 +36,14 @@ include ('includes/scripts.php');
 
                 <!-- <li><a href='registerbootbox.php'>Register</a></li> -->
 
-                <button type="button" class="btn btn-info btn-lg" id="test" data-toggle="modal" data-target="#myModal">Register</button>
+                <!-- <button type="button" class="btn btn-info btn-lg" id="test" data-toggle="modal" data-target="#myModal">Register</button>
 
 
                                   <div id="myModal" class="modal fade" role="dialog">
                                     <div class="modal-dialog">
 
                                       <!-- Modal content-->
-                                      <div class="modal-content">
+                                      <!-- <div class="modal-content">
                                         <div class="modal-header">
                                           <button type="button" class="close" data-dismiss="modal">&times;</button>
                                           <h4 class="modal-title">Register Form</h4>
@@ -97,30 +105,8 @@ include ('includes/scripts.php');
                                       </div>
 
                                   </div>
-                                </div>
+                                </div> -->
 
-                <li><a href='generateResults.php'>View Results</a></li>
-
-
-                
-            if(isset($_GET['failed'])){
-                echo "Login has failed!";
-            }
-            if (isset($_SESSION['user']))
-            {
-                include "includes/logoutbutton.php";
-            }
-            if(isset($_SESSION['admin']))
-            {
-                include "includes/logoutbutton.php";
-            }
-            if(empty($_SESSION))
-            {
-                        include "includes/login.php";
-            }
-
-            
-                ?>
             </ul>
         </div>
     </div>

@@ -177,7 +177,8 @@ session_start();
                             var roundPoints = 0;
 
                             if(json.length === 0){
-                                $('#show-results').append("<p>You did not submit your predictions for the selected round.</p>");
+                                $('#show-results').empty();
+                                $('#show-results').append("<p class='text-bg'>You did not submit your predictions for the selected round.</p>");
                             } else {
                                 console.dir(json);
                                 $(json).each(function(index, value){

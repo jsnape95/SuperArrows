@@ -93,7 +93,11 @@
                                 echo "<div class='row'>";
                                 echo "<div class='col-md-12'>";
                                 if(empty($_SESSION)) {
+<<<<<<< HEAD
                                     echo "<p class='text-danger text-bg'>You must be logged in to be able to make a prediction.</p>";
+=======
+                                    echo "<p class='text-bg'>You must be logged in to be able to make a prediction.</p>";
+>>>>>>> master
                                 } else {
                                     echo "<input type='submit' class='btn btn-success'/>";
                                 }
@@ -108,62 +112,62 @@
         <?php require __DIR__."/includes/scripts.php"; ?>
         <script>
 
-            $(document).ready(function(){
-                $('#test').click(function(){
-            bootbox.alert("Hello world!");
-          });
+        //     $(document).ready(function(){
+        //         $('#test').click(function(){
+        //     bootbox.alert("Hello world!");
+        //   });
 
-                $('.p1pred').click(function(){
-                    validateSpinners($(this).attr("id"));
-                });
+        //         $('.p1pred').click(function(){
+        //             validateSpinners($(this).attr("id"));
+        //         });
 
-                $('.p2pred').click(function(){
-                    validateSpinners($(this).attr("id"));
-                });
-            });
+        //         $('.p2pred').click(function(){
+        //             validateSpinners($(this).attr("id"));
+        //         });
+        //     });
 
-            function validateSpinners(id){
-                // alert(id);
-                var array = id.split("_");
-                var word = array[0];
-                var number = array[1];
+        //     function validateSpinners(id){
+        //         // alert(id);
+        //         var array = id.split("_");
+        //         var word = array[0];
+        //         var number = array[1];
                 
-                if(word === "p1pred"){
+        //         if(word === "p1pred"){
 
-                    var val = $('#'+word+'_'+number).val();
-                    switch (val) {
-                        case 0:
+        //             var val = $('#'+word+'_'+number).val();
+        //             switch (val) {
+        //                 case 0:
                             
-                            break;
-                        case 1:
+        //                     break;
+        //                 case 1:
                             
-                            break;
-                        case 2:
+        //                     break;
+        //                 case 2:
                             
-                            break;
-                        case 3:
+        //                     break;
+        //                 case 3:
                             
-                            break;
-                        case 4:
+        //                     break;
+        //                 case 4:
                             
-                            break;
-                        case 5:
+        //                     break;
+        //                 case 5:
                             
-                            break;
-                        case 6:
+        //                     break;
+        //                 case 6:
                             
-                            break;
-                    }
+        //                     break;
+        //             }
 
-                } else if(word === "p2pred"){
-                    var val = $('#'+word+'_'+number).val();
-                    alert(val);
-                }
+        //         } else if(word === "p2pred"){
+        //             var val = $('#'+word+'_'+number).val();
+        //             alert(val);
+        //         }
 
 
-                // alert(word);
-                // alert(number);
-            }
+        //         // alert(word);
+        //         // alert(number);
+        //     }
         </script>
     </body>
 </html>

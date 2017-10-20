@@ -109,6 +109,10 @@
         <script>
 
             $(document).ready(function(){
+                $('#test').click(function(){
+            bootbox.alert("Hello world!");
+          });
+
                 $('.p1pred').click(function(){
                     validateSpinners($(this).attr("id"));
                 });

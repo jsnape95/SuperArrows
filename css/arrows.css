@@ -504,9 +504,9 @@ footer hr {
     float: right;
 }
 
-.table-hover-me > tbody > tr:hover{
+/* .table-hover-me > tbody > tr:hover{
     background-color:#5697ff !important;
-}
+} */
 
 input[type="text"].result-box {
     height: 40px;

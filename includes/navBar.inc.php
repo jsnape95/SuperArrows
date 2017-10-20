@@ -8,30 +8,24 @@
         <div class="disp-block" style="margin-top:6%; margin-left:15%">
         <ul id="navList" class="list-inline">
             <?
-                if(isset($_SESSION['admin']))
-                {
-                    echo "<li><a href='logics/authorize.php'>Admin Page</a></li>";
+                if(!empty($_SESSION)){  
+                    if(isset($_SESSION['admin'])) {
+                        echo "<li><a href='logics/authorize.php'>Admin Page</a></li>";
+                    }
+                    echo "<li><a href='generateResults.php'>View Results</a></li>";
                 }
-            ?>
-                <li><a href='generateResults.php'>View Results</a></li>
-
-
-                <?
-            if(isset($_GET['failed'])){
-                echo "Login has failed!";
-            }
-            if (isset($_SESSION['user']))
-            {
-                include "includes/logoutbutton.php";
-            }
-            if(isset($_SESSION['admin']))
-            {
-                include "includes/logoutbutton.php";
-            }
-            if(empty($_SESSION))
-            {
-                        include "includes/login.php";
-            }
+                if(isset($_GET['failed'])){
+                    echo "Login has failed!";
+                }
+                if (isset($_SESSION['user'])){
+                    include "includes/logoutbutton.php";
+                }
+                if(isset($_SESSION['admin'])){
+                    include "includes/logoutbutton.php";
+                }
+                if(empty($_SESSION)){
+                    include "includes/login.php";
+                }
                 ?>
             </ul>
         </div>

@@ -36,14 +36,14 @@ include ('includes/scripts.php');
 
                 <!-- <li><a href='registerbootbox.php'>Register</a></li> -->
 
-                <button type="button" class="btn btn-info btn-lg" id="test" data-toggle="modal" data-target="#myModal">Register</button>
+                <!-- <button type="button" class="btn btn-info btn-lg" id="test" data-toggle="modal" data-target="#myModal">Register</button>
 
 
                                   <div id="myModal" class="modal fade" role="dialog">
                                     <div class="modal-dialog">
 
                                       <!-- Modal content-->
-                                      <div class="modal-content">
+                                      <!-- <div class="modal-content">
                                         <div class="modal-header">
                                           <button type="button" class="close" data-dismiss="modal">&times;</button>
                                           <h4 class="modal-title">Register Form</h4>
@@ -105,9 +105,7 @@ include ('includes/scripts.php');
                                       </div>
 
                                   </div>
-                                </div>
-
-                <li><a href='generateResults.php'>View Results</a></li>
+                                </div> -->
 
             </ul>
         </div>

@@ -17,81 +17,69 @@ include ('includes/scripts.php');
                     echo "<li><a href='logics/authorize.php'>Admin Page</a></li>";
                 }
             ?>
+              <li><a href='generateResults.php'>View Results</a></li>
 
                 <!-- <li><a href='registerbootbox.php'>Register</a></li> -->
 
-                <button type="button" class="btn btn-info btn-lg" id="test" data-toggle="modal" data-target="#myModal">Register</button>
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalForm">Register</button>
 
+                <div class="modal fade" id="modalForm" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <span aria-hidden="true">&times;</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                                <h4 class="modal-title cl-black" id="myModalLabel">Register Form</h4>
+                            </div>
 
-                                  <div id="myModal" class="modal fade" role="dialog">
-                                    <div class="modal-dialog">
+                            <!-- Modal Body -->
+                            <div class="modal-body">
+                                <p class="statusMsg"></p>
+                                <form role="form" action="registerform.php" method="post">
+>
+                                    <!-- <div class="form-group cl-black">
+                                        <label for="inputName">Name</label>
+                                        <input type="text" class="form-control" id="inputName" placeholder="Enter your name"/>
+                                    </div> -->
+                                    <div class="form-group cl-black">
+                                        <label for="inputEmail">First Name</label>
+                                        <input type="email" class="form-control" id="inputMessage" placeholder="Enter your first name"/>
+                                    </div>
+                                    <div class="form-group cl-black">
+                                        <label for="inputEmail">Second Name</label>
+                                        <input type="email" class="form-control" id="inputMessage" placeholder="Enter your second name"/>
+                                    </div>
+                                    <div class="form-group cl-black">
+                                        <label for="inputEmail">Username</label>
+                                        <input type="email" class="form-control" id="inputMessage" placeholder="Enter your username"/>
+                                    </div>
+                                    <div class="form-group cl-black">
+                                        <label for="inputEmail">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email"/>
+                                    </div>
+                                    <div class="form-group cl-black">
+                                        <label for="inputEmail">Password</label>
+                                        <input type="email" class="form-control" id="inputMessage" placeholder="Enter your password"/>
+                                    </div>
+                                </form>
+                            </div>
 
-                                      <!-- Modal content-->
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                          <h4 class="modal-title">Register Form</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                          <form action="registerform.php" method="post">
-                                              <div class ="form-horizontal">
-                                                <div class="form-group">
-                                                  <label for "firstname" class="col-md-5 col-md-offset-1 text-right">First Name:</label>
-                                                  <div class="col-md-6">
-                                                    <input type="text" name="firstname" value="" class="cl-black"/>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                              <div class ="form-horizontal">
-                                                  <div class="form-group">
-                                                    <label for "secondname" class="col-md-5 col-md-offset-1 text-right">Second Name:</label>
-                                                    <div class="col-md-6">
-                                                      <input type="text" name="secondname" value="" class="cl-black"/>
-                                                    </div>
-                                                  </div>
-                                                </div>
+                            <!-- Modal Footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                                              <div class ="form-horizontal">
-                                                <div class="form-group">
-                                                    <label for "username" class="col-md-5 col-md-offset-1 text-right">Username:</label>
-                                                      <div class="col-md-6">
-                                                        <input type="text" name="username" value="" class="cl-black"/>
-                                                      </div>
-                                                    </div>
-                                                  </div>
+                <!-- </div>
+              </div>
 
-                                                    <div class ="form-horizontal">
-                                                      <div class="form-group">
-                                                        <label for "email" class="col-md-5 col-md-offset-1 text-right">Email Address:</label>
-                                                        <div class="col-md-6">
-                                                          <input type="text" name="email" value="" class="cl-black"/>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-
-                                                <div class ="form-horizontal">
-                                                      <div class="form-group">
-                                                        <label for "password" class="col-md-5 col-md-offset-1 text-right">Password:</label>
-                                                          <div class="col-md-6">
-                                                            <input type="text" name="password" value="" class="cl-black"/>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-
-                                              <input type="submit" value="Register" class="cl-black"/>
-                                              </div>
-                                          </form>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                      </div>
-
-                                  </div>
-                                </div>
-
-                <li><a href='generateResults.php'>View Results</a></li>
+ -->
 
 
                 <?

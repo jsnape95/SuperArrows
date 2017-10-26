@@ -129,7 +129,7 @@
             $('#message').empty();
             $('#message').append("<p>No matches have been entered for this round.</p>");
             $('#message').show();
-          } else if(json[0]['player1score'] === 0){
+          } else if(json[0]['player1score'] === 0 || json[0]['player1score'] === null){
             $('#message').hide();
             $('#round-id-hidden').val(json[0]['roundId']);
 

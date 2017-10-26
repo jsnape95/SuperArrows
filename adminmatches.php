@@ -16,7 +16,6 @@
     <?php include_once('includes/productHeader.inc.php'); ?>
     <?php include_once('includes/navBar.inc.php'); ?>
     <div class='container'>
-        <h1>Welcome Admin</h1>
         <form method="POST" action="submittedMatches.php">
             <?php
 
@@ -25,7 +24,16 @@
 
                 $rf = new RoundFactory($db);
                 $rounds = $rf->getAllRounds();
-
+                ?>
+    
+    <div class="row">
+    <div class="col-md-7">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3>Add Results for a Round</h3>
+            </div>
+            <div class="panel-body">
+                <?
                 echo "Round: <select name='round' class='black-input'>";
                 foreach($rounds as $round) {
                     echo "<option value='$round->id'>$round->id ($round->startdate - $round->enddate)</option>";
@@ -47,7 +55,7 @@
                     echo "</select>";
                     echo "<br/><br/>";
                 }
-                echo "<input type='submit'/>";
+                echo "<input type='submit' class='cl-black'/>";
             ?>
         </form>
     </div>

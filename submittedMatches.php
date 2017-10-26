@@ -14,13 +14,12 @@
                 $_POST['player2'],
                 $_POST['round']
             );
-
             var_dump($matches);
-
             foreach($matches as $m) {
                 $mf->save($m);
+                header('Location: index.php');                                        
             }
-
+            // header('Location: index.php');                        
                 //$matches = [];
 
                 // foreach($_POST['player1'] as $val => $player1score)

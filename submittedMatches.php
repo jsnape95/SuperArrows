@@ -12,12 +12,5 @@
                 foreach($matches as $m) {
                     $mf->save($m);
                 }
-            $redirect = true;
-            if ($redirect)
-            {
-            // print("Worked");
-            }        
-            // header('Location: ' . $_SERVER['HTTP_REFERER']);
-            // header("Location: adminpage.php");    
-            // print("work");          
+        
 ?>

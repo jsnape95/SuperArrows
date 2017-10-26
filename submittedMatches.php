@@ -1,50 +1,23 @@
-<?php require __DIR__."/includes/bundle.php"; ?>
-
-<html>
-    <head>
-        <title>Super Arrows</title>
-        <?php require __DIR__."/includes/stylesheets.php"; ?>
-    </head>
-    <body>
-            <?php
+<?php             header('Location: adminpage.php');    
+?>
+<?php include_once __DIR__."/includes/bundle.php"; ?>
+<?php
 
             $mf = new MatchFactory($db);
             $matches = $mf->adminFromPostArrays(
-                $_POST['player1'],
-                $_POST['player2'],
-                $_POST['round']
-            );
-            var_dump($matches);
-            foreach($matches as $m) {
-                $mf->save($m);
-                header('Location: index.php');                                        
-            }
-            // header('Location: index.php');                        
-                //$matches = [];
-
-                // foreach($_POST['player1'] as $val => $player1score)
-                // {
-                //     $match = [];
-                //     array_push($match, $player1score);
-                //     $matches[$val] = $match;
-                // }
-                //
-                // foreach($_POST['player2'] as $val => $player2score)
-                // {
-                //     $match = $predictions[$val];
-                //     array_push($match, $player2score);
-                //     $predictions[$val] = $match;
-                // }
-
-
-            // ob_start();
-            // var_dump($_POST);
-            // $write = ob_get_contents();
-            // $fp=fopen('testfile.txt','w');
-            // fwrite($fp, $write);
-            // fclose($fp);
-            // ob_end_clean();
-            ?>
-            <?php require __DIR__."/includes/scripts.php"; ?>
-    </body>
-</html>
+                    $_POST['player1'],
+                    $_POST['player2'],
+                    $_POST['round']
+                );
+                foreach($matches as $m) {
+                    $mf->save($m);
+                }
+            $redirect = true;
+            if ($redirect)
+            {
+            // print("Worked");
+            }        
+            // header('Location: ' . $_SERVER['HTTP_REFERER']);
+            // header("Location: adminpage.php");    
+            // print("work");          
+?>

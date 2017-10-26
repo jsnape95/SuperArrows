@@ -125,7 +125,10 @@
           var json = JSON.parse(data);
 
           if(json.length === 0){
-            $('#message').hide();
+            $('#matches').hide();
+            $('#message').empty();
+            $('#message').append("<p>No matches have been entered for this round.</p>");
+            $('#message').show();
           } else if(json[0]['player1score'] === 0){
             $('#message').hide();
             $('#round-id-hidden').val(json[0]['roundId']);

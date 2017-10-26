@@ -1,7 +1,7 @@
 <?php
 include 'includes/connection.php';
-include('includes/productHeader.inc.php');
-include('includes/navBar.inc.php');
+// include('includes/productHeader.inc.php');
+// include('includes/navBar.inc.php');
 
 $c = new Connection();
 $db = $c->getDb();
@@ -180,40 +180,50 @@ $dateAndTime = date('Y-m-d H:i:s');
 
 <html>
 
-<head>
-    <title>Super Arrows</title>
-    <!-- this stylesheet thing needs changing -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/fontAwesome/css/font-awesome.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/arrows.css"/>
-</head>
+    <head>
+        <title>Super Arrows</title>
+        <!-- this stylesheet thing needs changing -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/fontAwesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/arrows.css"/>
+    </head>
+    <body>
+        <?php include_once('includes/productHeader.inc.php'); ?>
+        <?php include_once('includes/navBar.inc.php'); ?>
+        <div class='container'>
+            <div align='center'>
+                <br>
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <form action="registerform.php" method="post">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Register</div>
+                                <div class="panel-body cl-black">
+                                    First Name:<br />
+                                    <input type="text" name="firstname" value="" class="cl-black" required/>
+                                    <br /><br />
+                                    Second Name:<br />
+                                    <input type="text" name="secondname" value="" class="cl-black" required/>
+                                    <br /><br />
+                                    Username:<br />
+                                    <input type="text" name="username" value="" class="cl-black"class="cl-black" required/>
+                                    <br /><br />
+                                    E-Mail:<br />
+                                    <input type="email" name="email" value="" class="cl-black" required/>
+                                    <br /><br />
+                                    Password:<br />
+                                    <input type="password" name="password" value="" class="cl-black" required/>
+                                    <br /><br />
+                                    <input type="submit" value="Register" class="cl-black"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
-<div class='container'>
-  <div class='panel panel-default'>
-  <div align='center'>
-<form action="registerform.php" method="post">
-    <br>
-    <br>
-    <h5 class="cl-black"> First Name:  <br /> </h5>
-    <input type="text" name="firstname" value="" class="cl-black"/>
-    <br /><br />
-    <h5 class="cl-black"> Second Name:  <br /> </h5>
-    <input type="text" name="secondname" value="" class="cl-black"/>
-    <br /><br />
-    <h5 class="cl-black"> Username:  <br /> </h5>
-    <input type="text" name="username" value="" class="cl-black"class="cl-black"/>
-    <br /><br />
-    <h5 class="cl-black"> Email:  <br /> </h5>
-    <input type="email" name="email" value="" class="cl-black"/>
-    <br /><br />
-    <h5 class="cl-black"> Password:  <br /> </h5>
-    <input type="password" name="password" value="" class="cl-black"/>
-    <br /><br />
-    <input type="submit" value="Register" class="cl-black"/>
-</form>
-</div>
-</div>
-</div>

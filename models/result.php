@@ -12,6 +12,7 @@ class Result{
     public $player2last;
     public $match180s;
     public $pred180s;
+    public $roundId;
 }
 
 ?>

@@ -14,14 +14,52 @@
     <?php include 'includes/navBar.inc.php'; ?>
     <? include 'includes/connection.php';?>
     <div class='container'>
-        <h1>Welcome Admin</h1>
-        
-        <a href='/adminmatches.php'>Matches</a>
-        <a href='/adminresult.php'>Results</a>
-        <a href='/adminplayers.php'>Players</a>
-        <a href='/adminusers.php'>Users</a>
+        <div align="center">
+        <h1 class='text-bg'>Welcome Admin</h1>
 
-    
+        <div class="row">
+            <div class="col-md-4 col-md-offset-2">
+                <a href='/adminmatches.php'> 
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h2>Matches</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href='/adminresult.php'> 
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h2>Results</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-2">
+                <a href='/adminplayers.php'> 
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h2>Players</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href='/adminusers.php'> 
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h2>Users</h2>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+</div>
     </div>
     <?php require __DIR__."/includes/scripts.php"; ?>
 </body>

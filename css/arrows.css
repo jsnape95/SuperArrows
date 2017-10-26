@@ -15,6 +15,7 @@ body {
 .text-bg{
     text-shadow: 1px 1px 6px #000 !important;
     font-weight: bold !important;
+    color: white;
     -webkit-text-stroke-width: 1px !important;
     -webkit-text-stroke-color: black !important;
 }
@@ -504,9 +505,9 @@ footer hr {
     float: right;
 }
 
-.table-hover-me > tbody > tr:hover{
+/* .table-hover-me > tbody > tr:hover{
     background-color:#5697ff !important;
-}
+} */
 
 input[type="text"].result-box {
     height: 40px;
@@ -519,7 +520,11 @@ input[type="text"].result-box {
     border-color: #BBB #ECECEC #ECECEC #BBB;
     padding: .2rem;
 }
-
+#failed{
+    position: absolute;
+    right: 420px;
+    top:80px;
+}
 /* NUMBER SPINNER START */
 /* Reference: https://jsfiddle.net/Volker_E/WwfW9/ */
 input[type="number"] {

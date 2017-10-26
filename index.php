@@ -67,8 +67,8 @@
                                     echo                "<h5>$match->player1First $match->player1Last vs $match->player2First $match->player2Last (6)</h5>";
                                     echo            "</div>";
                                     echo            "<div class='panel-body'>";
-                                    echo                "<input class='mod cl-black' type='number' name='player1score[]' min='0' max='6'/> ";
-                                    echo                "<input class='mod cl-black' type='number' name='player2score[]' min='0' max='6'/>";
+                                    echo                "<input id='p1pred_".$val."' class='p1pred mod cl-black' type='number' name='player1score[]' min='0' max='6' required/> ";
+                                    echo                "<input id='p2pred_".$val."' class='p2pred mod cl-black' type='number' name='player2score[]' min='0' max='6' required/>";
                                     echo                "<input type='hidden' name='matches' value='".$matches."'/>";
                                     echo            "</div>";
                                     echo        "</div>";
@@ -93,7 +93,7 @@
                                 echo "<div class='row'>";
                                 echo "<div class='col-md-12'>";
                                 if(empty($_SESSION)) {
-                                    echo "<p class='text-danger'>You must be logged in to be able to make a prediction.</p>";
+                                    echo "<p class='text-bg'>You must be logged in to be able to make a prediction.</p>";
                                 } else {
                                     echo "<input type='submit' class='btn btn-success'/>";
                                 }
@@ -105,13 +105,65 @@
                 ?>
             </div>
         </div>
-        <!-- <?php require __DIR__."/includes/scripts.php"; ?>
-        <script>
-        $(document).ready(function(){
-          $('#test').click(function(){
+        <?php require __DIR__."/includes/scripts.php"; ?>
+        <!-- <script>
+
+            $(document).ready(function(){
+                $('#test').click(function(){
             bootbox.alert("Hello world!");
           });
-        })
+
+                $('.p1pred').click(function(){
+                    validateSpinners($(this).attr("id"));
+                });
+
+                $('.p2pred').click(function(){
+                    validateSpinners($(this).attr("id"));
+                });
+            });
+
+            function validateSpinners(id){
+                // alert(id);
+                var array = id.split("_");
+                var word = array[0];
+                var number = array[1];
+                
+                if(word === "p1pred"){
+
+                    var val = $('#'+word+'_'+number).val();
+                    switch (val) {
+                        case 0:
+                            
+                            break;
+                        case 1:
+                            
+                            break;
+                        case 2:
+                            
+                            break;
+                        case 3:
+                            
+                            break;
+                        case 4:
+                            
+                            break;
+                        case 5:
+                            
+                            break;
+                        case 6:
+                            
+                            break;
+                    }
+
+                } else if(word === "p2pred"){
+                    var val = $('#'+word+'_'+number).val();
+                    alert(val);
+                }
+
+
+                // alert(word);
+                // alert(number);
+            }
         </script> -->
     </body>
 </html>

@@ -1,4 +1,4 @@
-<div id="product-wrapper">
+<!-- <div id="product-wrapper">
     <div class="container">
         <div class="product-list">
 
@@ -48,4 +48,4 @@
 
         </div>
     </div>
-</div>
+</div> -->

@@ -1,5 +1,5 @@
 <?php
-include ('includes/scripts.php');
+  include ('includes/scripts.php');
 ?>
 
 <div id="navHeader">
@@ -36,11 +36,11 @@ include ('includes/scripts.php');
 
                 <!-- <li><a href='registerbootbox.php'>Register</a></li> -->
 
-                <!-- <button type="button" class="btn btn-info btn-lg" id="test" data-toggle="modal" data-target="#myModal">Register</button>
+                <!-- <button type="button" class="btn btn-info btn-lg" id="test">Register</button> -->
 
 
-                                  <div id="myModal" class="modal fade" role="dialog">
-                                    <div class="modal-dialog">
+                                  <!-- <div id="myModal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog"> -->
 
                                       <!-- Modal content-->
                                       <!-- <div class="modal-content">
@@ -112,6 +112,21 @@ include ('includes/scripts.php');
     </div>
 </div>
 </div>
+
+<script>
+  $('#register-btn').click(function (){
+    $.ajax({
+      url: "registerform.php",
+      type: "GET",
+      success: function(data){
+        bootbox.dialog({
+            message: data,
+            title: "Register"
+        });
+      }
+    });
+  })
+</script>
 
 
 <!-- jbkjbk -->

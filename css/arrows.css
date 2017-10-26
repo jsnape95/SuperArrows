@@ -553,3 +553,8 @@ input[type="number"].mod::-webkit-inner-spin-button:active{
     opacity: .8;
 }
 /* NUMBER SPINNER END */
+
+
+.modal-title{
+color: black;
+}

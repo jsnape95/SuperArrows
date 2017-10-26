@@ -39,47 +39,65 @@ include ('includes/scripts.php');
                             <div class="modal-body">
                                 <p class="statusMsg"></p>
                                 <form role="form" action="registerform.php" method="post">
->
-                                    <!-- <div class="form-group cl-black">
-                                        <label for="inputName">Name</label>
-                                        <input type="text" class="form-control" id="inputName" placeholder="Enter your name"/>
-                                    </div> -->
-                                    <div class="form-group cl-black">
-                                        <label for="inputEmail">First Name</label>
-                                        <input type="email" class="form-control" id="inputMessage" placeholder="Enter your first name"/>
+                                    <div class="form-horizontal">
+                                      <!-- <div class="form-group cl-black">
+                                          <label for="inputName">Name</label>
+                                          <input type="text" class="form-control" id="inputName" placeholder="Enter your name"/>
+                                      </div> -->
+                                      <div class="form-group cl-black">
+                                          <label for="inputFirstName">First Name</label>
+                                          <input type="search" class="form-control" id="inputFirstName" placeholder="Enter your first name"/>
+                                      </div>
+                                      <div class="form-group cl-black">
+                                          <label for="inputSecondName">Second Name</label>
+                                          <input type="search" class="form-control" id="inputSecondName" placeholder="Enter your second name"/>
+                                      </div>
+                                      <div class="form-group cl-black">
+                                          <label for="inputUsername">Username</label>
+                                          <input type="search" class="form-control" id="inputUsername" placeholder="Enter your username"/>
+                                      </div>
+                                      <div class="form-group cl-black">
+                                          <label for="inputEmail">Email</label>
+                                          <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email"/>
+                                      </div>
+                                      <div class="form-group col-md-10 cl-black">
+                                          <label for="inputPassword">Password</label>
+                                          <input type="password" class="form-control" id="inputPassword" placeholder="Enter your password"/>
+                                      </div>
                                     </div>
-                                    <div class="form-group cl-black">
-                                        <label for="inputEmail">Second Name</label>
-                                        <input type="email" class="form-control" id="inputMessage" placeholder="Enter your second name"/>
-                                    </div>
-                                    <div class="form-group cl-black">
-                                        <label for="inputEmail">Username</label>
-                                        <input type="email" class="form-control" id="inputMessage" placeholder="Enter your username"/>
-                                    </div>
-                                    <div class="form-group cl-black">
-                                        <label for="inputEmail">Email</label>
-                                        <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email"/>
-                                    </div>
-                                    <div class="form-group cl-black">
-                                        <label for="inputEmail">Password</label>
-                                        <input type="email" class="form-control" id="inputMessage" placeholder="Enter your password"/>
-                                    </div>
+
                                 </form>
                             </div>
 
                             <!-- Modal Footer -->
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">Submit</button>
+                                <button type="button" class="btn btn-primary submitBtn">Submit</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- </div>
-              </div>
 
- -->
+                <script>
+               $(function() {
+                  //twitter bootstrap script
+                  $("button#submit").click(function(){
+                      $.ajax({
+                              type: "POST",
+                              url: "registerform.php",
+                              data: $('form.contact').serialize(),
+                              success: function(msg){
+                                  $("#thanks").html(msg);
+                                  $("#contact").modal('hide');
+                              },
+                              error: function(){
+                                  alert("failure");
+                              }
+                     });
+                  });
+              });
+              </script>
 
 
                 <?

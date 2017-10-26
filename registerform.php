@@ -21,7 +21,7 @@ function get_client_ip_server() {
         $ipaddress = $_SERVER['REMOTE_ADDR'];
     else
         $ipaddress = 'UNKNOWN';
-  
+
     return $ipaddress;
   }
 
@@ -192,26 +192,28 @@ $dateAndTime = date('Y-m-d H:i:s');
 </head>
 </html>
 <div class='container'>
-            <div align='center'>
+  <div class='panel panel-default'>
+  <div align='center'>
 <form action="registerform.php" method="post">
     <br>
     <br>
-    First Name:<br />
+    <h5 class="cl-black"> First Name:  <br /> </h5>
     <input type="text" name="firstname" value="" class="cl-black"/>
     <br /><br />
-    Second Name:<br />
+    <h5 class="cl-black"> Second Name:  <br /> </h5>
     <input type="text" name="secondname" value="" class="cl-black"/>
     <br /><br />
-    Username:<br />
+    <h5 class="cl-black"> Username:  <br /> </h5>
     <input type="text" name="username" value="" class="cl-black"class="cl-black"/>
     <br /><br />
-    E-Mail:<br />
+    <h5 class="cl-black"> Email:  <br /> </h5>
     <input type="email" name="email" value="" class="cl-black"/>
     <br /><br />
-    Password:<br />
+    <h5 class="cl-black"> Password:  <br /> </h5>
     <input type="password" name="password" value="" class="cl-black"/>
     <br /><br />
     <input type="submit" value="Register" class="cl-black"/>
 </form>
+</div>
 </div>
 </div>

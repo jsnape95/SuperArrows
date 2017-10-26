@@ -84,6 +84,7 @@ class RoundFactory{
             $r->player2last = $round['player2last'];
             $r->match180s = $round['match180s'];
             $r->pred180s = $round['pred180s'];
+            $r->roundId = $roundId;
 
             if($r->player1score == $r->player1prediction && $r->player2score == $r->player2prediction){
                 $r->points = 5;

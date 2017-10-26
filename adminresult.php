@@ -16,22 +16,18 @@
     <?php include_once('includes/productHeader.inc.php'); ?>
     <?php include_once('includes/navBar.inc.php'); ?>
     <div class='container'>
-        <h1>Welcome Admin</h1>
+    <div align="center">
 
-        <form method="GET" action="adminsave.php">
+        <form method="POST" action="logics/adminsave.php">
         <?php
 
             $rf = new RoundFactory($db);
             $rounds = $rf->getAllRounds();
-
-            echo "Round: <select name='round'>";
-            foreach($rounds as $round) {
-                echo "<option value='$round->id'>$round->id ($round->startdate - $round->enddate)</option>";
-            }
-
             $mf = new MatchFactory($db);
-            //$q = $mf->getRoundMatches();
+            
 
+            
+            // $q = $mf->getRoundMatches();
             // $matches = serialize($q);
             //
             // foreach($q as $match) {
@@ -41,13 +37,72 @@
             //     echo "<input type='number' name='no180s[]' min='0'/>";
             //     echo "<input type='hidden' name='matches' value='".$matches."'/>";
             // }
-            echo "<input type='button' id='test'/>";
-        ?>
+      ?>
+    
+    
+    <h1 class='text-bg'>Welcome Admin</h1>
 
-          <div id='matches'>
-            <h3>Enter the round results</h3>
-
-          </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3>Add Results for a Round</h3>
+                </div>
+                <div class="panel-body">
+                    
+                <select name="round" id="round-drop" class="form-control">
+                <option value="" disabled selected>--Select Round--</option>
+                    <?
+                      foreach($rounds as $round) {
+                        echo "<option value='$round->id'>$round->id ($round->startdate - $round->enddate)</option>";
+                      }
+                    ?>
+                    </select>
+                    <br>
+                    <div id='message' class='cl-black'>
+                    </div>
+                    <div id='matches' class='cl-black'>
+                        
+                            <?php
+                              for($i=0; $i<6; $i++){
+                                echo "<div class='row'>";
+                                  echo "<div class='col-md-5 text-right'>";
+                                    echo "<label id='player1name_".$i."'></label>";
+                                  echo "</div>";
+                                  echo "<div class='col-md-2'>";
+                                    echo "<input class='p1pred mod cl-black' type='number' value='1' max='9' id='player1score_".$i."' name='player1score[]'/>";
+                                    echo "<input class='p2pred mod cl-black' type='number' value='1' max='9' id='player2score_".$i."' name='player2score[]'/>";
+                                  echo "</div>";
+                                  echo "<div class='col-md-5 text-left'>";
+                                    echo "<label id='player2name_".$i."'></label>";
+                                  echo "</div>";
+                                echo "</div>";
+                              }
+                            ?>
+                      <div class='row'>
+                        <div class='col-md-12'>
+                          <p>Match 180's</p>
+                          <input type='number' name='no180s' min='0'/>
+                        </div>
+                      </div>
+                      <div class='row'>
+                        <div class='col-md-12'>
+                          <input type='submit' value='Submit Results' class='btn btn-success'/>
+                        </div>
+                      </div>
+                      
+                      <input type='hidden' name='roundId' id='round-id-hidden'/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+      
+      
+      
+          
 
 
         <!-- <input type='submit'/> -->
@@ -55,34 +110,44 @@
     <?php require __DIR__."/includes/scripts.php"; ?>
     <script>
 
-    $('#test').click(function(){
+    $('#matches').hide();
+    $('#message').hide();
+
+    $('#round-drop').change(function(){
+      var id = this.value;
       $.ajax({
-        url: "getRoundMatches.php",
+        url: "getRoundResults.php",
         type: "GET",
         data: {
-          id:1
+          id:id
         },
         success: function(data){
-          console.dir(data);
           var json = JSON.parse(data);
+          console.dir(json);
 
-          for(var x=0; x< json.length; x++){
+          if(json.length === 0){
+            $('#message').hide();
+          } else if(json[0]['player1score'] === 0){
+            $('#message').hide();
+            alert(json[0]['roundId']);
+            $('#round-id-hidden').val(json[0]['roundId']);
 
-            var i = $('<input>').attr({'type':'number', 'name':'player1score[]', 'min': 0});
+            $(json).each(function(index, value){
+              var p1 = json[index]['player1first'] + " " + json[index]['player1last'];
+              var p2 = json[index]['player2first'] + " " + json[index]['player2last'];
 
-          // for(var x=0; x< json.length; x++){
-          //
-          //   var i = $('<input>').attr({'type':'number', 'name':'player2score[]', 'min': 0});
+              $("#player1name_"+index).text(p1);
+              $("#player2name_"+index).text(p2);
+            });
 
-            $('#matches').append(i);
-            console.dir(json[x]["player1First"]);
-          }
+            $('#matches').show();
 
-
-          for(var x=0; x< json.length; x++){
-
-              var i = $('<input>').attr({'type':'number', 'name':'player2score[]', 'min': 0});
-
+          } else {
+            console.log("Results already enterred");
+            $('#matches').hide();
+            $('#message').empty();
+            $('#message').append("<p>The results have already been submitted for this round.</p>");
+            $('#message').show();
           }
 
         }

@@ -62,7 +62,35 @@ class MatchFactory {
             insert into matches (matchdate, player1, player2, player1score, player2score, no180s, roundsid)
             values (:matchdate, :player1, :player2, :player1score, :player2score, :no180s, :roundsid)
         ");
+        $result = $stmt->execute([            
+            'matchdate' => $_POST['matchdate'],
+            'player1' => $match->player1Id,
+            'player2' => $match->player2Id,
+            'player1score' => $match->player1Score,
+            'player2score' => $match->player2Score,
+            'no180s' => $match->match180s,
+            'roundsid' => $match->roundsId
+        ]);
+        $match->id = $this->db->lastInsertId();
+    }
+    public function save2(Match $match) {
+        if(isset($match->id)) {
+            //redirect to update
+            return $this->update($match);
+        }
+        $stmt = $this->db->prepare("
+            update matches set
+            matchdate = :matchdate,
+            player1 = :player1,
+            player2 = :player2,
+            player1score = :player1score,
+            player2score = :player2score,
+            no180s = :no180s,
+            roundsid = :roundsid
+            where id = :id");
+            
         $result = $stmt->execute([
+            'id' => $match->id,
             'matchdate' => $match->matchDate,
             'player1' => $match->player1Id,
             'player2' => $match->player2Id,

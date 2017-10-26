@@ -124,18 +124,19 @@
         success: function(data){
           var json = JSON.parse(data);
 
+          console.dir(json);
           if(json.length === 0){
             $('#matches').hide();
             $('#message').empty();
             $('#message').append("<p>No matches have been entered for this round.</p>");
             $('#message').show();
-          } else if(json[0]['player1score'] === 0 || json[0]['player1score'] === null){
+          } else if(json[0]['player1Score'] === 0){
             $('#message').hide();
             $('#round-id-hidden').val(json[0]['roundId']);
 
             $(json).each(function(index, value){
-              var p1 = json[index]['player1first'] + " " + json[index]['player1last'];
-              var p2 = json[index]['player2first'] + " " + json[index]['player2last'];
+              var p1 = json[index]['player1First'] + " " + json[index]['player1Last'];
+              var p2 = json[index]['player2First'] + " " + json[index]['player2Last'];
 
               $("#player1name_"+index).text(p1);
               $("#player2name_"+index).text(p2);

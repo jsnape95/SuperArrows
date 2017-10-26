@@ -116,7 +116,7 @@
     $('#round-drop').change(function(){
       var id = this.value;
       $.ajax({
-        url: "getRoundResults.php",
+        url: "getRoundMatches.php",
         type: "GET",
         data: {
           id:id

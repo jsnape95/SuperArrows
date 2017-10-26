@@ -1,229 +1,59 @@
-<?php
-include 'includes/connection.php';
-// include('includes/productHeader.inc.php');
-// include('includes/navBar.inc.php');
 
-$c = new Connection();
-$db = $c->getDb();
-function get_client_ip_server() {
-    $ipaddress = '';
-    if ($_SERVER['HTTP_CLIENT_IP'])
-        $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
-    else if($_SERVER['HTTP_X_FORWARDED_FOR'])
-        $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    else if($_SERVER['HTTP_X_FORWARDED'])
-        $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
-    else if($_SERVER['HTTP_FORWARDED_FOR'])
-        $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
-    else if($_SERVER['HTTP_FORWARDED'])
-        $ipaddress = $_SERVER['HTTP_FORWARDED'];
-    else if($_SERVER['REMOTE_ADDR'])
-        $ipaddress = $_SERVER['REMOTE_ADDR'];
-    else
-        $ipaddress = 'UNKNOWN';
+<div class='container cl-black' >
+        
+    <form action="registerLogic.php" method="post">
+        <div class='form-horizontal'>
 
-    return $ipaddress;
-  }
-
-date_default_timezone_set('Europe/London');
-$ipAddress = get_client_ip_server();
-$dateAndTime = date('Y-m-d H:i:s');
-
-//checks whether the form has been submitted if not shows the form
-    if(!empty($_POST))
-    {
-        if(empty($_POST['username']))
-        {
-          echo "<script>
-          alert(\"Please enter a username\");
-          window.history.back();
-          </script>";
-        }
-        //if empty statements to check whether fields are complete
-        if(empty($_POST['password']))
-        {
-          echo "<script>
-          alert(\"Please enter a password\");
-          window.history.back();
-          </script>";
-        }
-        //ensure that the email address is actually valid using filter command
-        // if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
-        // {
-        //   echo "<script>
-        //   alert(\"Your Email address is invalid. Please try again\");
-        //
-        //   </script>";
-        //     //die("Invalid E-Mail Address");
-        // }
-        // select query to check in the database whether the username is already registered
-        // using tokens for this ':username' to help prevent SQL injection
-        $query = "SELECT 1
-            FROM users
-            WHERE
-                username = :username";
-        $query_params = array('username' => $_POST['username']);
-        // try and catch command to run the query in the SQL database
-        try
-        {
-            $state1 = $db->prepare($query);
-            $result = $state1->execute($query_params);
-        }
-        catch(PDOException $ex)
-        {
-            die("Failed to run query: " . $ex->getMessage());
-        }
-        //fetch method to bring the results back
-        //if a result is found then the username must already exist
-        $row = $state1->fetch();
-
-        if($row)
-        {
-            echo "<script>
-            alert(\"This username is already in use. Please try again\");
-            window.history.back();
-            </script>";
-        }
-
-        $query = "SELECT 1
-            FROM users
-            WHERE
-                email = :email";
-
-        $query_params = array(
-            'email' => $_POST['email']);
-
-        try
-        {
-            $state1 = $db->prepare($query);
-            $result = $state1->execute($query_params);
-        }
-        catch(PDOException $ex)
-        {
-            die("Failed to run query: " . $ex->getMessage());
-        }
-
-        $row = $state1->fetch();
-
-        if($row)
-        {
-          echo "<script>
-          alert(\"Your Email address is already in use. Please try again\");
-          window.history.back();
-          </script>";
-            //die("This email address is already registered");
-        }
-        //insert command to insert the details into the database
-        $query = "INSERT INTO users (
-                firstname,
-                secondname,
-                username,
-                password,
-                acctype,
-                salt,
-                email,
-                RegisterDate,
-                IP
-            ) VALUES (
-                :firstname,
-                :secondname,
-                :username,
-                :password,
-                :acctype,
-                :salt,
-                :email,
-                :todaydate,
-                :userip)";
-        //salts used to protect against brute force attacks
-        //this produces and 8 byte salt
-        $salt = dechex(mt_rand(0, 2147483647)) . dechex(mt_rand(0, 2147483647));
-        //sha256 used here to hash the password and salt together to be stored
-        //securely within the database
-        //this produces a 64 byte hex meaning the orignal password cannot be obtained
-        $password = hash('sha256', $_POST['password'] . $salt);
-        // for command to has the value 65536 times make it virtually impossible
-        // to brute force attack
-        for($round = 0; $round < 65536; $round++)
-        {
-            $password = hash('sha256', $password . $salt);
-        }
-        // the tokens are now prepared to be inserted within the database
-        $query_params = array(
-            'firstname' => $_POST['firstname'],
-            'secondname' => $_POST['secondname'],
-            'username' => $_POST['username'],
-            'password' => $password,
-            'acctype' => "U",
-            'salt' => $salt,
-            'email' => $_POST['email'],
-            'todaydate' => $dateAndTime,
-            'userip' => $ipAddress
-        );
-        // try command to insert the user into the database
-        try
-        {
-            $state1 = $db->prepare($query);
-            $result = $state1->execute($query_params);
-            echo $result;
-        }
-        catch(PDOException $ex)
-        {
-            die("Failed to run query: " . $ex->getMessage());
-        }
-        //header command to redirect the user to the login page
-        //header("Location: index.php");
-        //die command to prevent the php script executing when leaving
-        //die("Redirecting to index.php");
-    }
-
-?>
-
-<html>
-
-    <head>
-        <title>Super Arrows</title>
-        <!-- this stylesheet thing needs changing -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/fontAwesome/css/font-awesome.min.css"/>
-        <link rel="stylesheet" type="text/css" href="css/arrows.css"/>
-    </head>
-    <body>
-        <?php include_once('includes/productHeader.inc.php'); ?>
-        <?php include_once('includes/navBar.inc.php'); ?>
-        <div class='container'>
-            <div align='center'>
-                <br>
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        <form action="registerform.php" method="post">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">Register</div>
-                                <div class="panel-body cl-black">
-                                    First Name:<br />
-                                    <input type="text" name="firstname" value="" class="cl-black" required/>
-                                    <br /><br />
-                                    Second Name:<br />
-                                    <input type="text" name="secondname" value="" class="cl-black" required/>
-                                    <br /><br />
-                                    Username:<br />
-                                    <input type="text" name="username" value="" class="cl-black"class="cl-black" required/>
-                                    <br /><br />
-                                    E-Mail:<br />
-                                    <input type="email" name="email" value="" class="cl-black" required/>
-                                    <br /><br />
-                                    Password:<br />
-                                    <input type="password" name="password" value="" class="cl-black" required/>
-                                    <br /><br />
-                                    <input type="submit" value="Register" class="cl-black"/>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+            <div class='form-group'>
+                <div class='col-md-2 text-right'>
+                    <label for="inputFirstName">First Name</label>
+                </div>
+                <div class='col-md-4'>
+                    <input type="text" name="firstname" class="form-control" id="inputFirstName" placeholder="Enter your first name" required/>
                 </div>
             </div>
+            <div class='form-group'>
+                <div class='col-md-2 text-right'>
+                    <label for="inputSecondName">Second Name</label>
+                </div>
+                <div class='col-md-4'>
+                    <input type="text" name="secondname" class="form-control" id="inputSecondName" placeholder="Enter your second name" required/>
+                </div>
+            </div>
+
+            <div class='form-group'>
+                <div class='col-md-2 text-right'>
+                    <label for="inputUsername">Username</label>
+                </div>
+                <div class='col-md-4'>
+                    <input type="text" name="username" class="form-control" id="inputUsername" placeholder="Enter your username" required/>
+                </div>
+            </div>
+
+            <div class='form-group'>
+                <div class='col-md-2 text-right'>
+                    <label for="inputEmail">Email</label>
+                </div>
+                <div class='col-md-4'>
+                    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Enter your email" required/>
+                </div>
+            </div>
+
+            <div class='form-group'>
+                <div class='col-md-2 text-right'>
+                    <label for="inputPassword">Password</label>
+                </div>
+                <div class='col-md-4'>
+                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Enter your password" required/>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class='col-md-6'>
+                    <input type='submit' value='Submit!' class='btn btn-success'>
+                </div>
+            </div>
+        
         </div>
-    </body>
-</html>
+    </form>
+</div>

@@ -10,6 +10,6 @@
     <input type="submit" value="Login" class= "cl-black" />
 </li>
     <li>
-    <a href="../registerform.php" type="reg" class="cl-black">Register</a>
+    <a href="#" id="register-btn" type="reg" class="cl-black">Register</a>
 </li>
 </form>

@@ -1,5 +1,5 @@
 <?php
-include ('includes/scripts.php');
+  include ('includes/scripts.php');
 ?>
 
 <div id="navHeader">
@@ -36,6 +36,21 @@ include ('includes/scripts.php');
     </div>
 </div>
 </div>
+
+<script>
+  $('#register-btn').click(function (){
+    $.ajax({
+      url: "registerform.php",
+      type: "GET",
+      success: function(data){
+        bootbox.dialog({
+            message: data,
+            title: "Register"
+        });
+      }
+    });
+  })
+</script>
 
 
 <!-- jbkjbk -->

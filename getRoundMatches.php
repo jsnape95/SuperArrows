@@ -1,13 +1,15 @@
 <?php
-require __DIR__."/includes/bundle.php";
+    session_start();
+    require __DIR__."/includes/bundle.php";
 
-$round = $_GET['id'];
+    $roundId = $_GET['id'];
 
-$mf = new MatchFactory($db);
-$q = $mf->getRoundMatches($round);
-$red = json_encode($q);
+    $mf = new MatchFactory($db);
 
-echo $res;
+    $results = $mf->getRoundMatches($roundId);
+    $res = json_encode($results);
+
+    echo $res;
 
 
- ?>
+?>

@@ -10,9 +10,9 @@
     $user = $uf->getCurrentUser();
     $userId = $user->id;
     $results = $rf->getRoundResults($roundId, $userId);
-    $TEST = json_encode($results);
+    $res = json_encode($results);
 
-    echo $TEST;
+    echo $res;
 
 
 ?>

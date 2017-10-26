@@ -18,21 +18,21 @@
 --     PRIMARY KEY ( ID )
 -- );
 
--- DROP TABLE IF EXISTS 'Users';
--- create table Users(
---     ID  int(11) not null AUTO_INCREMENT,
---     FirstName varchar(30),
---     LastName varchar(30),
---     Username varchar(15),
---     Password varchar(50),
---     Salt char(16),
---     Email  varchar(256),
---     AccType char(1),
---     Points int(11),
---     RegisterDate datetime,
---     IP varchar(50),
---     PRIMARY KEY ( ID )
--- );
+DROP TABLE IF EXISTS 'Users';
+create table Users(
+    ID  int(11) not null AUTO_INCREMENT,
+    FirstName varchar(30),
+    LastName varchar(30),
+    Username varchar(15),
+    Password varchar(50),
+    Salt char(16),
+    Email  varchar(256),
+    AccType char(1),
+    Points int(11),
+    RegisterDate datetime,
+    IP varchar(50),
+    PRIMARY KEY ( ID )
+);
 
 -- DROP TABLE IF EXISTS 'Players';
 -- create table Players(

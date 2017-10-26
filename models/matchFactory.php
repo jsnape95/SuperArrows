@@ -88,12 +88,14 @@ class MatchFactory {
             'matchid' => $match->id
         ]);
     }
-    public function fromPostArrays(array $matches, array $player1, array $player2, array $no180s) {
+    public function fromPostArrays($roundId, array $player1, array $player2, $no180s) {
+
+        $matches = $this->getRoundMatches($roundId);
 
         foreach($matches as $val => $match) {
             $match->player1Score = $player1[$val];
             $match->player2Score = $player2[$val];
-            $match->match180s = $no180s[$val];
+            $match->match180s = $no180s;
         }
         return $matches;
 

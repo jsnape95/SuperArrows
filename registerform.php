@@ -21,7 +21,7 @@ function get_client_ip_server() {
         $ipaddress = $_SERVER['REMOTE_ADDR'];
     else
         $ipaddress = 'UNKNOWN';
-  
+
     return $ipaddress;
   }
 
@@ -179,6 +179,7 @@ $dateAndTime = date('Y-m-d H:i:s');
 ?>
 
 <html>
+
     <head>
         <title>Super Arrows</title>
         <!-- this stylesheet thing needs changing -->

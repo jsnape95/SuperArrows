@@ -30,8 +30,6 @@
                 if(empty($_SESSION)){
                     include "includes/login.php";
                 }
-        
-
             ?>
             </ul>
         </div>

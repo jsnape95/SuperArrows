@@ -45,7 +45,7 @@ $db = $c->getDb();
             session_start();
             $_SESSION['admin'] = $row;
             $submitted_username = htmlentities($_POST['username']);      
-            header('Location: ../index.php?successful');
+            header('Location: ../adminpage.php');
             die();
         }
         else if ($login_ok AND $row['AccType']=='U'){

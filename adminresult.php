@@ -123,13 +123,11 @@
         },
         success: function(data){
           var json = JSON.parse(data);
-          console.dir(json);
 
           if(json.length === 0){
             $('#message').hide();
           } else if(json[0]['player1score'] === 0){
             $('#message').hide();
-            alert(json[0]['roundId']);
             $('#round-id-hidden').val(json[0]['roundId']);
 
             $(json).each(function(index, value){
@@ -143,7 +141,6 @@
             $('#matches').show();
 
           } else {
-            console.log("Results already enterred");
             $('#matches').hide();
             $('#message').empty();
             $('#message').append("<p>The results have already been submitted for this round.</p>");
